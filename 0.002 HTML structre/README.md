@@ -6,6 +6,7 @@ JavaScript is used to make the website **functional**. It is also known as the *
 
 <img src="./comparison+of+HTML+and+CSS+and+JS.png">
 
+
 As shown in the image:
 
 - HTML = **Skeleton** (man)
@@ -49,6 +50,7 @@ Here’s a basic HTML program that prints `Hello, World!` on the screen:
 - `<body>` → Contains the visible content (text, images, links, etc.).
 
 Here’s the labeled output with tags:
+
 <img src="./Screenshot (222).png">
 
 ---
