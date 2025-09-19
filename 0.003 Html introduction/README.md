@@ -24,7 +24,7 @@
 </html>
 ```
 
-#Example Explained
+# Example Explained
 
 -The <!DOCTYPE html> declaration defines that this document is an HTML5 document
 -The <html> element is the root element of an HTML page
