@@ -24,15 +24,18 @@
 </html>
 ```
 
+
 # Example Explained
 
--The <!DOCTYPE html> declaration defines that this document is an HTML5 document
--The <html> element is the root element of an HTML page
--The <head> element contains meta information about the HTML page
--The <title> element specifies a title for the HTML page (which is shown in the browser's title bar or in the page's tab)
--The <body> element defines the document's body, and is a container for all the visible contents, such as headings, paragraphs, images, hyperlinks, tables, lists, etc.
--The <h1> element defines a large heading
--The <p> element defines a paragraph
+- The `<!DOCTYPE html>` declaration defines that this document is an **HTML5 document**.
+- The `<html>` element is the **root element** of an HTML page.
+- The `<head>` element contains **meta information** about the HTML page.
+- The `<title>` element specifies a **title** for the HTML page (shown in the browser's title bar or tab).
+- The `<body>` element defines the **document's body** and is a container for all visible contents such as headings, paragraphs, images, hyperlinks, tables, and lists.
+- The `<h1>` element defines a **large heading**.
+- The `<p>` element defines a **paragraph**.
+
+
 
 # What is an HTML Element?
 
@@ -53,7 +56,7 @@ The HTML element is everything from the start tag to the end tag:
 > These elements are called **empty elements**.  
 > Empty elements do not have an end tag!
 
-
+---
 # Web Browsers
 
 The purpose of a web browser (Chrome, Edge, Firefox, Safari) is to read HTML documents and display them correctly.
@@ -69,7 +72,7 @@ Below is a visualization of an HTML page structure:
 <img src="image copy.png" />
 
 **Note:** The content inside the <body> section will be displayed in a browser. The content inside the <title> element will be shown in the browser's title bar or in the page's tab.
-
+---
 # HTML History
 Since the early days of the World Wide Web, there have been many versions of HTML:
 | Year | Version                                |
