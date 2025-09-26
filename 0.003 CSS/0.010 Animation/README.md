@@ -233,4 +233,3 @@ The following example shows some of the different speed curves that can be used:
 #div4 {animation-timing-function: ease-out;}
 #div5 {animation-timing-function: ease-in-out;}
 ```
-# CSS animation-fill-mode Property
