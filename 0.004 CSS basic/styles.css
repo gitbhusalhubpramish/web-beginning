@@ -10,3 +10,34 @@
     height: 50px;
     width: 50px;
 }
+tbody>tr>td {
+    background-color: yellow;
+}
+tfoot>tr>td {
+    background-color: yellow;
+}
+thead>tr>th{
+    background-color: greenyellow;
+}
+td {
+    border: 1px solid black;
+}
+th {
+    border:1px solid black;
+}
+table {
+    border: 2px solid black;
+    border-spacing: 0px;
+}
+.rect{
+    background-color: aqua;
+    border-radius: 10px;
+    height: 100px;
+    width: 100px;
+}
+.cir {
+    background-color: blue;
+    border-radius: 50%;
+    height: 100px;
+    width: 100px;
+}

@@ -21,7 +21,6 @@ This course is a collaborative effort created by multiple contributors. Each col
 6. **Selectors & Styling** – Element, class, ID selectors + applying colors, fonts, borders, backgrounds.  
 7. **Units** – Absolute (`px`) and relative (`em`, `%`, `rem`, `vh`, `vw`).  
 8. **CSS Box Model** – Margin, border, padding, content.  
-9. **Page Layout** – Introduction to layout approaches.  
 10. **Flexbox** – Flex container, alignment, justification, responsive layouts.  
 11. **Grid** – CSS grid system for advanced layouts.  
 12. **Transformations** – Scale, rotate, translate, skew.  
@@ -29,7 +28,7 @@ This course is a collaborative effort created by multiple contributors. Each col
 14. **Media Queries** – Responsive design basics.  
 
 ### 2. JavaScript (Core Concepts)  
-15. **JavaScript Basics** – Syntax, operators, `console.log()`.  
+14. **JavaScript Basics** – Syntax, operators, `console.log()`.  
 16. **Variables and Data Types** – `let`, `const`, `var`, primitive vs non-primitive.  
 17. **Arrays and Objects (JSON)** – Basic operations, nesting.  
 18. **Conditionals** – `if`, `else`, `switch`.  
@@ -46,20 +45,20 @@ This course is a collaborative effort created by multiple contributors. Each col
 29. **Events** – Event listeners, user interactions.  
 
 ### 3. Backend (Node.js + Express)  
-30. **Node.js Introduction** – What is Node.js, running scripts.  
+29. **Node.js Introduction** – What is Node.js, running scripts.  
 31. **Express.js Introduction** – Setting up an Express server.  
 32. **Request and Response** – Using `req` and `res`.  
 33. **HTTP Methods** – GET, POST, PUT, DELETE.  
 34. **Middleware** – Custom middleware, authentication, logging.  
 
 ### 4. Database (MongoDB + Mongoose)  
-35. **Database Basics** – What databases are, relational vs non-relational.  
+34. **Database Basics** – What databases are, relational vs non-relational.  
 36. **MongoDB Introduction** – Collections, documents, BSON.  
 37. **Mongoose Introduction** – Why use Mongoose, schemas, and models.  
 38. **CRUD with Mongoose** – Create, Read, Update, Delete operations.    
 
 ### 5. Frontend Frameworks (React + Next.js)  
-39. **React Introduction** – What React is, why it’s popular.  
+38. **React Introduction** – What React is, why it’s popular.  
 41. **useState** – State management basics.  
 42. **useEffect** – Side effects.  
 43. **useContext** – Context API for global state.  
