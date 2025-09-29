@@ -4,7 +4,7 @@ HTML is known as the **structure of a website** or the **skeleton of a website**
 CSS is used for **designing** or **styling**. It makes the website **good-looking** and **colorful**.
 JavaScript is used to make the website **functional**. It is also known as the **brain** of a website.
 
-<img src="./comparison+of+HTML+and+CSS+and+JS.png">
+<img src="./img/comparison+of+HTML+and+CSS+and+JS.png">
 
 
 As shown in the image:
@@ -35,7 +35,7 @@ Here’s a basic HTML program that prints `Hello, World!` on the screen:
 </html>
 ```
 
-<img src="Screenshot (222) - Copy.png">
+<img src="img/Screenshot (222) - Copy.png">
 
 ## Explanation:
 
@@ -51,7 +51,7 @@ Here’s a basic HTML program that prints `Hello, World!` on the screen:
 
 Here’s the labeled output with tags:
 
-<img src="./Screenshot (222).png">
+<img src="./img/Screenshot (222).png">
 
 ---
 
