@@ -1,0 +1,12 @@
+.container{
+    margin: 10px; 
+    background-color: lightyellow;
+    height: 100px;
+    width: 100px;
+}
+.box{
+    margin: 10px; 
+    background-color: aqua;
+    height: 50px;
+    width: 50px;
+}
