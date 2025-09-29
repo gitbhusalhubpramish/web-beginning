@@ -16,7 +16,7 @@ Did you notice something here?
   </body>
 </html>
 ```
-<img src="Screenshot (222) - Copy.png">
+<img src="img/Screenshot (222) - Copy.png">
 
 Whatever you write inside `<body>` and `</body>` will be shown on the screen.
 
@@ -50,7 +50,7 @@ These tags have both an **opening tag** and a **closing tag**, enclosing content
 
 - **Closing tag:** Marks the end of an element. It consists of the element’s name preceded by `/` and enclosed in angle brackets.
 
-<img src="tag parts.png">
+<img src="img/tag parts.png">
 
 --- 
 ## Types of Elements
@@ -105,7 +105,7 @@ Example:
 
 
 Output:
-<img src="Screenshot (228).png">
+<img src="img/Screenshot (228).png">
 
 
 ### **Block Elements**
@@ -137,4 +137,4 @@ Example:
 
 
 Output:
-<img src="Screenshot (227).png">
+<img src="img/Screenshot (227).png">
