@@ -1,0 +1,11 @@
+.parent{
+    width: 50vw;
+    height: 50vh;
+    border: 2px solid black;
+}
+.circ{
+    width: 50%;
+    height: 50%;
+    border-radius: 50%;
+    border: 2px solid black;
+}
