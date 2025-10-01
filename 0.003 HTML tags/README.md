@@ -138,3 +138,8 @@ Example:
 
 Output:
 <img src="img/Screenshot (227).png">
+
+**Note:**
+
+- A **parent element** is an HTML element that directly **contains** other elements.
+- A **child element** is an HTML element that is directly contained within another element. It is **"nested"** inside its parent.
