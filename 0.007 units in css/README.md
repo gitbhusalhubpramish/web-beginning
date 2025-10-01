@@ -42,3 +42,12 @@ These change depending on something else, like the parent element or the screen.
 
 * Use **px** if you want a size that never changes.
 * Use **%, em, rem, vh, vw** if you want your element to adjust automatically.
+
+# `calc()`
+The `calc()` function in CSS allows for the performance of mathematical calculations directly within CSS property values. This function is particularly useful for dynamically determining sizes, positions, and other numeric-based properties, especially when combining different units or creating responsive layouts.
+
+**Example**
+
+```css
+width: calc(100% - 40px); /* Sets width to 100% of parent minus 40 pixels */
+```
