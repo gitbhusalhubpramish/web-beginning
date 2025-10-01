@@ -85,6 +85,40 @@ ul > li {
 
 ---
 
+## Selector Specificity (Value)
+
+When multiple CSS rules target the same element, the **specificity** decides which rule wins. The higher the specificity, the more priority it has.
+
+**Specificity order (from highest to lowest):**
+
+1. **`!important`** → Overrides everything (but should be avoided when possible).
+2. **ID Selector (`#id`)**
+3. **Class, Attribute, and Pseudo-class Selectors (`.class`, `[attr]`, `:hover`)**
+4. **Type (Element) Selectors (`p`, `h1`, `div`)**
+5. **Universal Selector (`*`)**
+
+**Example:**
+
+```css
+p {
+  color: blue;   /* Lowest priority */
+}
+
+.my-class {
+  color: green;  /* Overrides element */
+}
+
+#my-id {
+  color: red;    /* Overrides class */
+}
+
+p {
+  color: yellow !important; /* Overrides everything */
+}
+```
+
+---
+
 ### **Pseudo Selectors**
 
 Pseudo selectors select elements based on their **state**, such as when hovered or clicked.
