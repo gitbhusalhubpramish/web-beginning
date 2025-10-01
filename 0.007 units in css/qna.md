@@ -1,0 +1,1 @@
+1. make a div which is half of the screen size inside it make a circle div half of the size of it's parent
