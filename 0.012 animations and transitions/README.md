@@ -535,3 +535,7 @@ You can use **both** transitions and animations on the same element:
 5. **Don't overdo it** → Too many animations can be distracting
 
 **Next up:** We'll learn about responsive design and media queries to make our websites look great on all devices!
+
+---
+
+_This section was created by [aakku106](https://github.com/aakku106)_
