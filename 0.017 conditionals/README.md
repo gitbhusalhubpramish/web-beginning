@@ -318,77 +318,90 @@ switch (grade) {
 
 ## Practical Examples
 
+_Note: The following examples use simple variables and conditional logic. We'll learn about functions in a later lesson!_
+
 ### 1. **Age Category Checker**
 
 ```javascript
-function checkAgeCategory(age) {
-  if (age < 13) {
-    return "Child";
-  } else if (age < 20) {
-    return "Teenager";
-  } else if (age < 60) {
-    return "Adult";
-  } else {
-    return "Senior";
-  }
+let age = 25;
+let category;
+
+if (age < 13) {
+  category = "Child";
+} else if (age < 20) {
+  category = "Teenager";
+} else if (age < 60) {
+  category = "Adult";
+} else {
+  category = "Senior";
 }
 
-console.log(checkAgeCategory(25)); // "Adult"
+console.log(category); // "Adult"
 ```
 
 ### 2. **Simple Calculator**
 
 ```javascript
-function calculator(num1, operator, num2) {
-  switch (operator) {
-    case "+":
-      return num1 + num2;
-    case "-":
-      return num1 - num2;
-    case "*":
-      return num1 * num2;
-    case "/":
-      return num1 / num2;
-    default:
-      return "Invalid operator";
-  }
+let num1 = 10;
+let operator = "+";
+let num2 = 5;
+let result;
+
+switch (operator) {
+  case "+":
+    result = num1 + num2;
+    break;
+  case "-":
+    result = num1 - num2;
+    break;
+  case "*":
+    result = num1 * num2;
+    break;
+  case "/":
+    result = num1 / num2;
+    break;
+  default:
+    result = "Invalid operator";
 }
 
-console.log(calculator(10, "+", 5)); // 15
+console.log(result); // 15
 ```
 
 ### 3. **Password Strength Checker**
 
 ```javascript
-function checkPasswordStrength(password) {
-  if (password.length < 6) {
-    return "Weak: Too short";
-  } else if (password.length < 10) {
-    return "Medium: Good length";
-  } else {
-    return "Strong: Great length";
-  }
+let password = "abc123";
+let strength;
+
+if (password.length < 6) {
+  strength = "Weak: Too short";
+} else if (password.length < 10) {
+  strength = "Medium: Good length";
+} else {
+  strength = "Strong: Great length";
 }
 
-console.log(checkPasswordStrength("abc")); // "Weak: Too short"
+console.log(strength); // "Medium: Good length"
 ```
 
 ### 4. **Weather Clothing Advisor**
 
 ```javascript
-function clothingAdvice(temperature, isRaining) {
-  if (isRaining) {
-    return "Take an umbrella and wear a jacket!";
-  } else if (temperature > 25) {
-    return "Wear light clothes, it's warm!";
-  } else if (temperature > 15) {
-    return "A light jacket should be fine.";
-  } else {
-    return "Bundle up, it's cold!";
-  }
+let temperature = 20;
+let isRaining = false;
+let advice;
+
+if (isRaining) {
+  advice = "Take an umbrella and wear a jacket!";
+} else if (temperature > 25) {
+  advice = "Wear light clothes, it's warm!";
+} else if (temperature > 15) {
+  advice = "A light jacket should be fine.";
+} else {
+  advice = "Bundle up, it's cold!";
 }
 
-console.log(clothingAdvice(20, false)); // "A light jacket should be fine."
+console.log(advice); // "A light jacket should be fine."
 ```
 
 ---
