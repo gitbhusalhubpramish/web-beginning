@@ -383,4 +383,4 @@ Keep practicing these exercises and try creating your own functions for everyday
 
 ---
 
-Created by aakku106 - Making JavaScript accessible for everyone! 🚀
+Created by [aakku106](https://github.com/aakku106) - Making JavaScript accessible for everyone! 🚀

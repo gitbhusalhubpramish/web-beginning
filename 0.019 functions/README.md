@@ -228,4 +228,4 @@ Head over to the `qna.md` file to practice what you've learned with hands-on exe
 
 ---
 
-Created by aakku106 - Making web development fun and accessible for everyone! 🚀
+Created by [aakku106](https://github.com/aakku106) - Making web development fun and accessible for everyone! 🚀
