@@ -1,12 +1,60 @@
-*{
+/* Simple CSS Box Model Example (No Flexbox or Grid) */
+
+/* Reset default spacing */
+* {
     margin: 0;
     padding: 0;
-}
-.box{
-    width: 100px;
-    height: 100px;
-    background-color: aqua;
-    border: 10px solid black;
-    padding: 10px;
-    margin: 10px;
-}
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: #f2f2f2;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* Main box that holds everything */
+  .main-box {
+    background-color: white;
+    width: 80%;
+    margin: 20px auto; /* center the box */
+    padding: 20px;
+    border: 2px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .main-box h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  /* Each container box for ticket */
+  .container {
+    background-color: #e6f7ff;
+    border: 1px solid #b3e0ff;
+    padding: 15px;
+    margin-bottom: 15px; /* space between boxes */
+    border-radius: 8px;
+  }
+  
+  .header {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  /* Simple button styling */
+  .button {
+    background-color: #28a745;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+  }
+  
+  .button:hover {
+    background-color: #218838;
+  }
+  
+  .button:active {
+    background-color: #1e7e34;
+  }
+  
