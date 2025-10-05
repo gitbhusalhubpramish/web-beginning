@@ -1,65 +1,86 @@
+<!-- @format -->
+
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>JavaScript Functions - Interactive Examples</title>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
     <div class="container">
-        <header>
-            <h1>🎯 JavaScript Functions Interactive Examples</h1>
-            <p>Learn functions by clicking buttons and seeing real results!</p>
-        </header>
+      <header>
+        <h1>🎯 JavaScript Functions Interactive Examples</h1>
+        <p>Learn functions by clicking buttons and seeing real results!</p>
+      </header>
 
-        <main>
-            <!-- Basic Function Example -->
-            <section class="demo-section">
-                <h2>1. Basic Function Declaration</h2>
-                <p>A simple function that greets the user</p>
-                <div class="demo-area">
-                    <button onclick="basicGreeting()" class="demo-btn">Click to Greet!</button>
-                    <div id="greeting-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>function basicGreeting() {
+      <main>
+        <!-- Basic Function Example -->
+        <section class="demo-section">
+          <h2>1. Basic Function Declaration</h2>
+          <p>A simple function that greets the user</p>
+          <div class="demo-area">
+            <button onclick="basicGreeting()" class="demo-btn">
+              Click to Greet!
+            </button>
+            <div id="greeting-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>function basicGreeting() {
     return "Hello! Welcome to JavaScript Functions! 👋";
 }</code></pre>
-                </div>
-            </section>
+          </div>
+        </section>
 
-            <!-- Function with Parameters -->
-            <section class="demo-section">
-                <h2>2. Functions with Parameters</h2>
-                <p>Functions that accept input to customize their behavior</p>
-                <div class="demo-area">
-                    <input type="text" id="userName" placeholder="Enter your name" class="demo-input">
-                    <button onclick="personalGreeting()" class="demo-btn">Greet Me Personally!</button>
-                    <div id="personal-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>function personalGreeting(name) {
+        <!-- Function with Parameters -->
+        <section class="demo-section">
+          <h2>2. Functions with Parameters</h2>
+          <p>Functions that accept input to customize their behavior</p>
+          <div class="demo-area">
+            <input
+              type="text"
+              id="userName"
+              placeholder="Enter your name"
+              class="demo-input" />
+            <button onclick="personalGreeting()" class="demo-btn">
+              Greet Me Personally!
+            </button>
+            <div id="personal-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>function personalGreeting(name) {
     return "Hello " + name + "! Welcome to our site! 🎉";
 }</code></pre>
-                </div>
-            </section>
+          </div>
+        </section>
 
-            <!-- Functions with Return Values -->
-            <section class="demo-section">
-                <h2>3. Functions that Return Values</h2>
-                <p>Calculate GST for any product price</p>
-                <div class="demo-area">
-                    <input type="number" id="price" placeholder="Enter price (Rs)" class="demo-input">
-                    <input type="number" id="gstRate" placeholder="GST rate %" value="18" class="demo-input">
-                    <button onclick="calculateGST()" class="demo-btn">Calculate GST</button>
-                    <div id="gst-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>function calculateGST(price, gstRate) {
+        <!-- Functions with Return Values -->
+        <section class="demo-section">
+          <h2>3. Functions that Return Values</h2>
+          <p>Calculate GST for any product price</p>
+          <div class="demo-area">
+            <input
+              type="number"
+              id="price"
+              placeholder="Enter price (Rs)"
+              class="demo-input" />
+            <input
+              type="number"
+              id="gstRate"
+              placeholder="GST rate %"
+              value="18"
+              class="demo-input" />
+            <button onclick="calculateGST()" class="demo-btn">
+              Calculate GST
+            </button>
+            <div id="gst-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>function calculateGST(price, gstRate) {
     const gstAmount = (price * gstRate) / 100;
     const totalPrice = price + gstAmount;
     return {
@@ -68,21 +89,27 @@
         totalPrice: totalPrice
     };
 }</code></pre>
-                </div>
-            </section>
+          </div>
+        </section>
 
-            <!-- Arrow Functions -->
-            <section class="demo-section">
-                <h2>4. Arrow Functions</h2>
-                <p>Modern way to write functions with shorter syntax</p>
-                <div class="demo-area">
-                    <input type="number" id="number" placeholder="Enter a number" class="demo-input">
-                    <button onclick="testArrowFunctions()" class="demo-btn">Test Arrow Functions</button>
-                    <div id="arrow-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>// Arrow function for squaring
+        <!-- Arrow Functions -->
+        <section class="demo-section">
+          <h2>4. Arrow Functions</h2>
+          <p>Modern way to write functions with shorter syntax</p>
+          <div class="demo-area">
+            <input
+              type="number"
+              id="number"
+              placeholder="Enter a number"
+              class="demo-input" />
+            <button onclick="testArrowFunctions()" class="demo-btn">
+              Test Arrow Functions
+            </button>
+            <div id="arrow-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>// Arrow function for squaring
 const square = (x) => x * x;
 
 // Arrow function for doubling
@@ -90,86 +117,116 @@ const double = (x) => x * 2;
 
 // Arrow function for greeting
 const quickGreet = (name) => `Hi ${name}! 👋`;</code></pre>
-                </div>
-            </section>
+          </div>
+        </section>
 
-            <!-- Voting Eligibility Checker -->
-            <section class="demo-section">
-                <h2>5. Conditional Logic in Functions</h2>
-                <p>Check if someone is eligible to vote</p>
-                <div class="demo-area">
-                    <input type="number" id="age" placeholder="Enter age" class="demo-input">
-                    <button onclick="checkVotingEligibility()" class="demo-btn">Check Eligibility</button>
-                    <div id="voting-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>function checkVotingEligibility(age) {
+        <!-- Voting Eligibility Checker -->
+        <section class="demo-section">
+          <h2>5. Conditional Logic in Functions</h2>
+          <p>Check if someone is eligible to vote</p>
+          <div class="demo-area">
+            <input
+              type="number"
+              id="age"
+              placeholder="Enter age"
+              class="demo-input" />
+            <button onclick="checkVotingEligibility()" class="demo-btn">
+              Check Eligibility
+            </button>
+            <div id="voting-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>function checkVotingEligibility(age) {
     if (age >= 18) {
         return "✅ You can vote!";
     } else {
         return `❌ You cannot vote yet. Wait ${18 - age} more years.`;
     }
 }</code></pre>
-                </div>
-            </section>
+          </div>
+        </section>
 
-            <!-- Temperature Converter -->
-            <section class="demo-section">
-                <h2>6. Multiple Functions Working Together</h2>
-                <p>Convert temperatures between Celsius and Fahrenheit</p>
-                <div class="demo-area">
-                    <input type="number" id="temperature" placeholder="Enter temperature" class="demo-input">
-                    <button onclick="convertCelsiusToFahrenheit()" class="demo-btn">°C to °F</button>
-                    <button onclick="convertFahrenheitToCelsius()" class="demo-btn">°F to °C</button>
-                    <div id="temp-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>function celsiusToFahrenheit(celsius) {
+        <!-- Temperature Converter -->
+        <section class="demo-section">
+          <h2>6. Multiple Functions Working Together</h2>
+          <p>Convert temperatures between Celsius and Fahrenheit</p>
+          <div class="demo-area">
+            <input
+              type="number"
+              id="temperature"
+              placeholder="Enter temperature"
+              class="demo-input" />
+            <button onclick="convertCelsiusToFahrenheit()" class="demo-btn">
+              °C to °F
+            </button>
+            <button onclick="convertFahrenheitToCelsius()" class="demo-btn">
+              °F to °C
+            </button>
+            <div id="temp-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>function celsiusToFahrenheit(celsius) {
     return (celsius * 9/5) + 32;
 }
 
 function fahrenheitToCelsius(fahrenheit) {
     return (fahrenheit - 32) * 5/9;
 }</code></pre>
-                </div>
-            </section>
+          </div>
+        </section>
 
-            <!-- EMI Calculator -->
-            <section class="demo-section">
-                <h2>7. Real-World Function: EMI Calculator</h2>
-                <p>Calculate monthly EMI for loans (Equated Monthly Installments)</p>
-                <div class="demo-area">
-                    <input type="number" id="principal" placeholder="Loan amount (Rs)" class="demo-input">
-                    <input type="number" id="rate" placeholder="Interest rate % per year" class="demo-input">
-                    <input type="number" id="years" placeholder="Loan tenure (years)" class="demo-input">
-                    <button onclick="calculateEMI()" class="demo-btn">Calculate EMI</button>
-                    <div id="emi-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>function calculateEMI(principal, rate, years) {
+        <!-- EMI Calculator -->
+        <section class="demo-section">
+          <h2>7. Real-World Function: EMI Calculator</h2>
+          <p>Calculate monthly EMI for loans (Equated Monthly Installments)</p>
+          <div class="demo-area">
+            <input
+              type="number"
+              id="principal"
+              placeholder="Loan amount (Rs)"
+              class="demo-input" />
+            <input
+              type="number"
+              id="rate"
+              placeholder="Interest rate % per year"
+              class="demo-input" />
+            <input
+              type="number"
+              id="years"
+              placeholder="Loan tenure (years)"
+              class="demo-input" />
+            <button onclick="calculateEMI()" class="demo-btn">
+              Calculate EMI
+            </button>
+            <div id="emi-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>function calculateEMI(principal, rate, years) {
     const monthlyRate = rate / (12 * 100);
     const months = years * 12;
     const emi = (principal * monthlyRate * Math.pow(1 + monthlyRate, months)) / 
                 (Math.pow(1 + monthlyRate, months) - 1);
     return Math.round(emi);
 }</code></pre>
-                </div>
-            </section>
+          </div>
+        </section>
 
-            <!-- Function Scope Demo -->
-            <section class="demo-section">
-                <h2>8. Function Scope Demonstration</h2>
-                <p>See how variables behave inside and outside functions</p>
-                <div class="demo-area">
-                    <button onclick="demonstrateScope()" class="demo-btn">Show Scope Example</button>
-                    <div id="scope-output" class="output"></div>
-                </div>
-                <div class="code-display">
-                    <h3>Code:</h3>
-                    <pre><code>let globalVar = "I'm accessible everywhere!";
+        <!-- Function Scope Demo -->
+        <section class="demo-section">
+          <h2>8. Function Scope Demonstration</h2>
+          <p>See how variables behave inside and outside functions</p>
+          <div class="demo-area">
+            <button onclick="demonstrateScope()" class="demo-btn">
+              Show Scope Example
+            </button>
+            <div id="scope-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>let globalVar = "I'm accessible everywhere!";
 
 function demonstrateScope() {
     let localVar = "I'm only available inside this function!";
@@ -179,16 +236,22 @@ function demonstrateScope() {
         local: localVar
     };
 }</code></pre>
-                </div>
-            </section>
-        </main>
+          </div>
+        </section>
+      </main>
 
-        <footer>
-            <p>🎉 Great job exploring JavaScript functions! Practice more with the QnA exercises!</p>
-            <p>Created by aakku106 - Making web development accessible for everyone! 🚀</p>
-        </footer>
+      <footer>
+        <p>
+          🎉 Great job exploring JavaScript functions! Practice more with the
+          QnA exercises!
+        </p>
+        <p>
+          Created by aakku106 - Making web development accessible for everyone!
+          🚀
+        </p>
+      </footer>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>

@@ -1,3 +1,5 @@
+<!-- @format -->
+
 # 0.019 JavaScript Functions
 
 ## What are Functions?
@@ -21,7 +23,7 @@ This is the traditional way to create functions:
 
 ```javascript
 function functionName() {
-    // Code to execute
+  // Code to execute
 }
 ```
 
@@ -29,7 +31,7 @@ function functionName() {
 
 ```javascript
 function greetUser() {
-    console.log("Hello! Welcome to our website!");
+  console.log("Hello! Welcome to our website!");
 }
 
 // Call the function
@@ -42,7 +44,7 @@ Functions can receive information (called parameters) to work with:
 
 ```javascript
 function greetUserByName(name) {
-    console.log("Hello " + name + "! Welcome to our website!");
+  console.log("Hello " + name + "! Welcome to our website!");
 }
 
 // Call with different names
@@ -56,7 +58,7 @@ Functions can give back (return) a result:
 
 ```javascript
 function addTwoNumbers(num1, num2) {
-    return num1 + num2;
+  return num1 + num2;
 }
 
 let result = addTwoNumbers(5, 3);
@@ -70,13 +72,13 @@ Arrow functions are a shorter way to write functions:
 ```javascript
 // Regular function
 function multiply(a, b) {
-    return a * b;
+  return a * b;
 }
 
 // Same function as arrow function
 const multiply = (a, b) => {
-    return a * b;
-}
+  return a * b;
+};
 
 // Even shorter for simple functions
 const multiply = (a, b) => a * b;
@@ -88,9 +90,9 @@ const multiply = (a, b) => a * b;
 
 ```javascript
 function calculateGST(price, gstRate) {
-    const gstAmount = (price * gstRate) / 100;
-    const totalPrice = price + gstAmount;
-    return totalPrice;
+  const gstAmount = (price * gstRate) / 100;
+  const totalPrice = price + gstAmount;
+  return totalPrice;
 }
 
 let itemPrice = 1000;
@@ -102,11 +104,11 @@ console.log("Final price with GST: Rs " + finalPrice); // Rs 1180
 
 ```javascript
 function canVote(age) {
-    if (age >= 18) {
-        return "You can vote!";
-    } else {
-        return "You cannot vote yet. Wait " + (18 - age) + " more years.";
-    }
+  if (age >= 18) {
+    return "You can vote!";
+  } else {
+    return "You cannot vote yet. Wait " + (18 - age) + " more years.";
+  }
 }
 
 console.log(canVote(20)); // You can vote!
@@ -117,11 +119,11 @@ console.log(canVote(16)); // You cannot vote yet. Wait 2 more years.
 
 ```javascript
 function celsiusToFahrenheit(celsius) {
-    return (celsius * 9/5) + 32;
+  return (celsius * 9) / 5 + 32;
 }
 
 function fahrenheitToCelsius(fahrenheit) {
-    return (fahrenheit - 32) * 5/9;
+  return ((fahrenheit - 32) * 5) / 9;
 }
 
 console.log(celsiusToFahrenheit(30)); // 86°F
@@ -134,8 +136,8 @@ Variables inside functions are **local** - they only exist inside that function:
 
 ```javascript
 function myFunction() {
-    let localVariable = "I'm only available inside this function";
-    console.log(localVariable); // This works
+  let localVariable = "I'm only available inside this function";
+  console.log(localVariable); // This works
 }
 
 // console.log(localVariable); // This would cause an error
@@ -146,8 +148,8 @@ function myFunction() {
 ### 1. Function Expression
 
 ```javascript
-const sayHello = function(name) {
-    return "Hello " + name;
+const sayHello = function (name) {
+  return "Hello " + name;
 };
 ```
 
@@ -155,15 +157,15 @@ const sayHello = function(name) {
 
 ```javascript
 // With one parameter (parentheses optional)
-const square = x => x * x;
+const square = (x) => x * x;
 
 // With no parameters
 const getRandomNumber = () => Math.random();
 
 // With multiple statements
 const processData = (data) => {
-    const processed = data.toUpperCase();
-    return processed + "!";
+  const processed = data.toUpperCase();
+  return processed + "!";
 };
 ```
 
@@ -176,12 +178,12 @@ const processData = (data) => {
 
 ```javascript
 function divide(a, b) {
-    // Return early if division by zero
-    if (b === 0) {
-        return "Error: Cannot divide by zero";
-    }
-    
-    return a / b;
+  // Return early if division by zero
+  if (b === 0) {
+    return "Error: Cannot divide by zero";
+  }
+
+  return a / b;
 }
 ```
 
@@ -191,7 +193,7 @@ function divide(a, b) {
 
 ```javascript
 function sayHi() {
-    console.log("Hi!");
+  console.log("Hi!");
 }
 // This just defines the function, doesn't run it
 
@@ -203,12 +205,12 @@ sayHi(); // This actually runs the function
 ```javascript
 // Wrong
 function add(a, b) {
-    a + b; // This doesn't return anything
+  a + b; // This doesn't return anything
 }
 
 // Correct
 function add(a, b) {
-    return a + b;
+  return a + b;
 }
 ```
 
