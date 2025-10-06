@@ -1,4 +1,4 @@
-# Flexbox - Easy Guide for Beginners
+# Flexbox
 
 Have you ever tried to **arrange items inside a container** so that they look neat, maintain proper margins and padding automatically, and adjust nicely when the screen size changes? 🤔
 
