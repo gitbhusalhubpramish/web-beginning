@@ -1,4 +1,4 @@
-# CSS Grid - Easy Guide for Beginners
+# CSS Grid
 
 Have you ever tried to **arrange boxes in rows and columns** on a page, but it becomes messy when the screen size changes? 
 
