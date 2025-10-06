@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Exercises</title>
+<style>
+body { font-family: Arial, sans-serif; padding: 20px; }
+button { margin: 10px 0; padding: 10px 20px; cursor: pointer; }
+</style>
+</head>
+<body>
+
+
+<h2>1. Alert Message (Inline JS)</h2>
+<button onclick="alert('Hello, welcome to my website!')">Click Me</button>
+
+
+<h2>2. Console Log (Inline JS)</h2>
+<button onclick="console.log('Button Clicked!')">Click Me</button>
+
+
+<h2>3. Prompt User Input (Inline JS)</h2>
+<button onclick="let name = prompt('Enter your name:'); alert('Hello ' + name + '!');">Enter Name</button>
+
+
+<h2>4. Confirm Action (Inline JS)</h2>
+<button onclick="let result = confirm('Do you want to continue?'); console.log(result);">Continue?</button>
+
+
+<h2>5. External JS File Example</h2>
+<button id="externalBtn">Click Me</button>
+
+
+<h2>6. Console Practice on Page Load (Inline JS)</h2>
+<script>
+    window.onload = function() {
+        console.log('Page Loaded');
+    };
+</script>
+<script src="script.js"></script>
+
+
+</body>
+</html>
