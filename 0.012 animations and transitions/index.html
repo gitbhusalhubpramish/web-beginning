@@ -1,0 +1,172 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Animations & Transitions Demo</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>CSS Animations & Transitions Demo</h1>
+
+      <!-- Transition Examples -->
+      <section class="demo-section">
+        <h2>Transitions - Smooth Changes on Hover</h2>
+        <div class="demo-row">
+          <div class="demo-box transition-color">
+            <p>Hover me</p>
+            <span>Color Transition</span>
+          </div>
+          <div class="demo-box transition-size">
+            <p>Hover me</p>
+            <span>Scale Transition</span>
+          </div>
+          <div class="demo-box transition-move">
+            <p>Hover me</p>
+            <span>Move Transition</span>
+          </div>
+          <div class="demo-box transition-rotate">
+            <p>Hover me</p>
+            <span>Rotate Transition</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Button Examples -->
+      <section class="demo-section">
+        <h2>Interactive Buttons with Transitions</h2>
+        <div class="button-row">
+          <button class="btn btn-hover">Hover Effect</button>
+          <button class="btn btn-bounce">Bounce Click</button>
+          <button class="btn btn-glow">Glow Effect</button>
+          <button class="btn btn-slide">Slide Background</button>
+        </div>
+      </section>
+
+      <!-- Animation Examples -->
+      <section class="demo-section">
+        <h2>CSS Animations - Continuous Motion</h2>
+        <div class="animation-row">
+          <div class="animation-demo">
+            <div class="spinner"></div>
+            <p>Loading Spinner</p>
+          </div>
+          <div class="animation-demo">
+            <div class="pulse-dot"></div>
+            <p>Pulse Effect</p>
+          </div>
+          <div class="animation-demo">
+            <div class="bounce-ball"></div>
+            <p>Bouncing Ball</p>
+          </div>
+          <div class="animation-demo">
+            <div class="float-box"></div>
+            <p>Floating Box</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Text Animations -->
+      <section class="demo-section">
+        <h2>Text Animations</h2>
+        <div class="text-demo-row">
+          <div class="text-demo">
+            <h3 class="fade-in-text">I fade in smoothly</h3>
+          </div>
+          <div class="text-demo">
+            <h3 class="slide-in-text">I slide from left</h3>
+          </div>
+          <div class="text-demo">
+            <h3 class="typing-text">I'm typing this message...</h3>
+          </div>
+        </div>
+      </section>
+
+      <!-- Card Examples -->
+      <section class="demo-section">
+        <h2>Interactive Cards</h2>
+        <div class="card-row">
+          <div class="card card-lift">
+            <h3>Lift on Hover</h3>
+            <p>
+              This card lifts up when you hover over it with a smooth
+              transition.
+            </p>
+          </div>
+          <div class="card card-flip">
+            <div class="card-front">
+              <h3>Flip Card</h3>
+              <p>Hover to see the back</p>
+            </div>
+            <div class="card-back">
+              <h3>Back Side!</h3>
+              <p>This is the back of the card</p>
+            </div>
+          </div>
+          <div class="card card-zoom">
+            <h3>Zoom Effect</h3>
+            <p>This card zooms in on hover with a scale transition.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Combined Examples -->
+      <section class="demo-section">
+        <h2>Combined Animations & Transitions</h2>
+        <div class="combined-row">
+          <div class="combined-demo floating-card">
+            <h3>Floating Card</h3>
+            <p>I float automatically and have hover effects too!</p>
+          </div>
+          <div class="combined-demo pulsing-button">
+            <button>Pulsing Button</button>
+          </div>
+          <div class="combined-demo loading-dots">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <p>Loading dots</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Timing Function Examples -->
+      <section class="demo-section">
+        <h2>Timing Functions - Click to See Different Speeds</h2>
+        <div class="timing-row">
+          <div class="timing-demo">
+            <div class="moving-box timing-ease" id="ease">Linear</div>
+            <p>ease (default)</p>
+          </div>
+          <div class="timing-demo">
+            <div class="moving-box timing-linear" id="linear">Linear</div>
+            <p>linear</p>
+          </div>
+          <div class="timing-demo">
+            <div class="moving-box timing-ease-in" id="ease-in">Ease In</div>
+            <p>ease-in</p>
+          </div>
+          <div class="timing-demo">
+            <div class="moving-box timing-ease-out" id="ease-out">Ease Out</div>
+            <p>ease-out</p>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <script>
+      // Add click functionality for timing function demos
+      document.querySelectorAll(".moving-box").forEach((box) => {
+        box.addEventListener("click", function () {
+          this.style.transform =
+            this.style.transform === "translateX(200px)"
+              ? "translateX(0)"
+              : "translateX(200px)";
+        });
+      });
+    </script>
+  </body>
+</html>
