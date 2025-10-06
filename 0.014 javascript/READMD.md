@@ -1,4 +1,4 @@
-# JavaScript - Beginner Friendly Introduction
+# JavaScript - Introduction
 
 Have you ever wondered how websites can **do interactive things** like showing messages, responding when you click buttons, or logging information? 
 
