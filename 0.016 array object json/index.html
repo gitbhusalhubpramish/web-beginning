@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Practice Set Answers</title>
+    <style>
+        body {
+            font-family: Arial;
+            padding: 20px;
+        }
+
+        pre {
+            background: #f4f4f4;
+            padding: 10px;
+            border: 1px solid #ccc;
+        }
+
+        h2 {
+            color: #2a7ae2;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>JavaScript Arrays, Objects & JSON Practice Set</h1>
+
+
+    <!-- Question 1 -->
+    <h2>Q1: Array Basics</h2>
+    <p>Task: Create an array of fruits, display first and last, add and remove items.</p>
+    <p>Output:</p>
+    <pre id="q1-output"></pre>
+    <p>Code:</p>
+    <pre>
+let fruits = ['Apple','Banana','Mango','Orange','Grapes'];
+console.log(fruits[0]);
+console.log(fruits[fruits.length-1]);
+fruits.push('Pineapple');
+fruits.shift();
+console.log(fruits);
+</pre>
+
+
+    <!-- Question 2 -->
+    <h2>Q2: Array Methods</h2>
+    <p>Task: Map, filter, forEach on numbers array.</p>
+    <p>Output:</p>
+    <pre id="q2-output"></pre>
+    <p>Code:</p>
+    <pre>
+let numbers = [10,20,30,40];
+let doubled = numbers.map(n => n*2);
+let filtered = numbers.filter(n => n>25);
+numbers.forEach(n => console.log(n));
+</pre>
+
+
+    <!-- Question 3 -->
+    <h2>Q3: Reference vs Copy</h2>
+    <p>Task: Demonstrate array reference and spread copy.</p>
+    <p>Output:</p>
+    <pre id="q3-output"></pre>
+    <p>Code:</p>
+    <pre>
+let arr = [1,2,3];
+let arr2 = arr;
+arr2.push(4);
+let arr3 = [...arr];
+arr3.push(5);
+console.log(arr);
+console.log(arr2);
+console.log(arr3);
+</pre>
+
+
+    <!-- Question 4 -->
+    <h2>Q4: Object Basics</h2>
+    <p>Task: Create student object, access properties, add and update keys.</p>
+    <p>Output:</p>
+    <pre id="q4-output"></pre>
+    <p>Code:</p>
+    <pre>
+let student = {name: 'Pramish', age: 13, subjects: ['Math','Science','English']};
+student.grade = 8;
+student.age = 14;
+console.log(student);
+</pre>
+
+
+    <!-- Question 5 -->
+    <h2>Q5: Loop Through Object</h2>
+    <p>Task: Loop through student object and print keys & values.</p>
+    <p>Output:</p>
+    <pre id="q5-output"></pre>
+    <p>Code:</p>
+    <pre>
+for(let key in student){
+console.log(key + ': ' + student[key]);
+}
+</pre>
+
+
+    <!-- Question 6 -->
+    <h2>Q6: JSON Basics</h2>
+    <p>Task: Import users JSON and display usernames.</p>
+    <p>Output:</p>
+    <pre id="q6-output"></pre>
+    <p>Code:</p>
+    <pre>
+let usersJSON = '[{"username":"user1","password":"123"},{"username":"user2","password":"abc"}]';
+let users = JSON.parse(usersJSON);
+users.forEach(u => console.log(u.username));
+</pre>
+    <!-- Question 7 -->
+    <h2>Q7: Update JSON Data</h2>
+    <p>Task: Add a new user to JSON and print updated object.</p>
+    <p>Output:</p>
+    <pre id="q7-output"></pre>
+    <p>Code:</p>
+    <pre>
+users.push({username:'user3', password:'xyz'});
+console.log(users);
+</pre>
+
+
+    <!-- Question 8 -->
+    <h2>Q8: Combined Practice</h2>
+    <p>Task: Array of student objects, map names, filter by age, convert to JSON.</p>
+    <p>Output:</p>
+    <pre id="q8-output"></pre>
+    <p>Code:</p>
+    <pre>
+let studentsArray = [
+{name:'A', age:12, grade:7},
+{name:'B', age:13, grade:8},
+{name:'C', age:11, grade:6}
+];
+let namesArray = studentsArray.map(s => s.name);
+let ageFiltered = studentsArray.filter(s => s.age>12);
+let jsonString = JSON.stringify(studentsArray);
+console.log(namesArray);
+console.log(ageFiltered);
+console.log(jsonString);
+</pre>
+    <script>
+        // Fill outputs dynamically
+        document.getElementById('q1-output').textContent = (() => {
+            let fruits = ['Apple', 'Banana', 'Mango', 'Orange', 'Grapes'];
+            let out = 'First fruit: ' + fruits[0] + '\n';
+            out += 'Last fruit: ' + fruits[fruits.length - 1] + '\n';
+            fruits.push('Pineapple');
+            fruits.shift();
+            out += 'Fruits after adding/removing: ' + fruits;
+            return out;
+        })();
+
+
+        document.getElementById('q2-output').textContent = (() => {
+            let numbers = [10, 20, 30, 40];
+            let doubled = numbers.map(n => n * 2);
+            let filtered = numbers.filter(n => n > 25);
+            let out = 'Doubled: ' + doubled + '\n';
+            out += 'Filtered >25: ' + filtered + '\n';
+            out += 'ForEach output: ' + numbers.join(', ');
+            return out;
+        })();
+
+
+        document.getElementById('q3-output').textContent = (() => {
+            let arr = [1, 2, 3];
+            let arr2 = arr;
+            arr2.push(4);
+            let arr3 = [...arr];
+            arr3.push(5);
+            return 'arr: ' + arr + '\narr2: ' + arr2 + '\narr3: ' + arr3;
+        })();
+
+
+        document.getElementById('q4-output').textContent = (() => {
+            let student = { name: 'Pramish', age: 13, subjects: ['Math', 'Science', 'English'] };
+            student.grade = 8;
+            student.age = 14;
+            return JSON.stringify(student);
+        })();
+
+
+        document.getElementById('q5-output').textContent = (() => {
+            let student = { name: 'Pramish', age: 14, subjects: ['Math', 'Science', 'English'], grade: 8 };
+            let out = '';
+            for (let key in student) { out += key + ': ' + student[key] + '\n'; }
+            return out;
+        })();
+
+
+        document.getElementById('q6-output').textContent = (() => {
+            let usersJSON = '[{"username":"user1","password":"123"},{"username":"user2","password":"abc"}]';
+            let users = JSON.parse(usersJSON);
+            return users.map(u => u.username).join(', ');
+        })();
+
+
+        document.getElementById('q7-output').textContent = (() => {
+            let usersJSON = '[{"username":"user1","password":"123"},{"username":"user2","password":"abc"}]';
+            let users = JSON.parse(usersJSON);
+            users.push({ username: 'user3', password: 'xyz' });
+            return JSON.stringify(users, null, 2);
+        })();
+
+
+        document.getElementById('q8-output').textContent = (() => {
+            let studentsArray = [
+                { name: 'A', age: 12, grade: 7 },
+                { name: 'B', age: 13, grade: 8 },
+                { name: 'C', age: 11, grade: 6 }
+            ];
+            let namesArray = studentsArray.map(s => s.name);
+            let ageFiltered = studentsArray.filter(s => s.age > 12);
+            let jsonString = JSON.stringify(studentsArray);
+            return 'Student names: ' + namesArray + '\n' +
+                'Students age>12: ' + JSON.stringify(ageFiltered) + '\n' +
+                'JSON string: ' + jsonString;
+        })();
+
+
+    </script>
+</body>
+
+</html>
