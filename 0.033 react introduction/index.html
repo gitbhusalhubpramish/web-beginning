@@ -93,10 +93,10 @@
           </div>
           <div class="code-display">
             <h3>React Component Code:</h3>
-            <pre><code>function Button({ text, color, onClick }) {
+            <pre><code>function Button({ text, variant, onClick }) {
     return (
         &lt;button 
-            style={{backgroundColor: color}} 
+            className={`btn btn-${variant}`}
             onClick={onClick}
         &gt;
             {text}
@@ -105,9 +105,9 @@
 }
 
 // Use the same component multiple times
-&lt;Button text="Success" color="green" onClick={handleSuccess} /&gt;
-&lt;Button text="Warning" color="orange" onClick={handleWarning} /&gt;
-&lt;Button text="Danger" color="red" onClick={handleDanger} /&gt;</code></pre>
+&lt;Button text="Success" variant="success" onClick={handleSuccess} /&gt;
+&lt;Button text="Warning" variant="warning" onClick={handleWarning} /&gt;
+&lt;Button text="Danger" variant="danger" onClick={handleDanger} /&gt;</code></pre>
           </div>
         </section>
 
@@ -369,19 +369,11 @@ function ListComponent() {
       }
 
       // Reusable Button Component
-      function Button({ text, color, onClick, message }) {
+      function Button({ text, variant, onClick, message }) {
         return React.createElement(
           "button",
           {
-            style: {
-              backgroundColor: color,
-              color: "white",
-              border: "none",
-              padding: "10px 20px",
-              margin: "5px",
-              borderRadius: "5px",
-              cursor: "pointer",
-            },
+            className: `btn btn-${variant}`,
             onClick: () => onClick(message),
           },
           text
@@ -399,19 +391,19 @@ function ListComponent() {
           React.createElement("p", null, "Message: ", message),
           React.createElement(Button, {
             text: "Success",
-            color: "#28a745",
+            variant: "success",
             onClick: handleClick,
             message: "Success action completed! ✅",
           }),
           React.createElement(Button, {
             text: "Warning",
-            color: "#ffc107",
+            variant: "warning",
             onClick: handleClick,
             message: "Warning: Please be careful! ⚠️",
           }),
           React.createElement(Button, {
             text: "Danger",
-            color: "#dc3545",
+            variant: "danger",
             onClick: handleClick,
             message: "Danger: Action cannot be undone! 🚨",
           })
