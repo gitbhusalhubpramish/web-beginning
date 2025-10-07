@@ -1,6 +1,6 @@
 # CSS Grid
 
-Have you ever tried to **arrange boxes in rows and columns** on a page, but it becomes messy when the screen size changes? 
+Have you ever tried to **arrange boxes in rows and columns** on a page, but it becomes messy when the screen size changes?
 
 Doing it manually with floats or margins is hard. **CSS Grid solves this problem easily!** It is a CSS tool that helps you **place items neatly in rows and columns**, control spacing automatically, and make layouts that adjust to any screen.
 
@@ -147,6 +147,6 @@ Result: Boxes are arranged in 3 columns and automatically wrap to the next row.
 
 ---
 
-CSS Grid is **very powerful** and makes layouts simple. Once you practice a little, you can design beautiful pages that adjust perfectly to any screen. 
+CSS Grid is **very powerful** and makes layouts simple. Once you practice a little, you can design beautiful pages that adjust perfectly to any screen.
 
 Try changing `grid-template-columns`, `grid-template-rows`, and `gap` to see how your layout changes!

@@ -1,9 +1,11 @@
 # File Guide  
 
 ## Introduction  
+
 This course is a collaborative effort created by multiple contributors. Each collaborator responsible for teaching should follow this file guideline when preparing and uploading files. The goal is to keep the content beginner-friendly, practical, and easy to understand.  
 
 ## Rules  
+
 - **Limited AI:** This course is designed for beginners, so explanations must be in simple and natural language. First, create the content yourself. AI can be used later to polish or simplify wording, but don’t rely on it entirely.  
 - **Markdown:** Every topic must include a `README.md` file that explains the concept according to the roadmap. Use **bold** for key terms, add images/diagrams/code snippets, and ensure the formatting improves readability.  
 - **Practice and QnA:** Add a `QNA.md` file with exercises. Focus on practical, hands-on tasks (e.g., *“Write a function to add two numbers in JavaScript”* or *“Build a simple webpage with a header and footer”*). Avoid rote-learning style questions.  
@@ -13,6 +15,7 @@ This course is a collaborative effort created by multiple contributors. Each col
 ## Roadmap  
 
 ### 1. Frontend (HTML + CSS + JS Basics)  
+
 1. **Introduction to Web Development** – Websites, webpages, frontend vs backend.  
 2. **HTML Structure** – Boilerplate, `<html>`, `<head>`, `<body>`.  
 3. **HTML Tags** – Headings, paragraphs, links, images, lists, tables, forms.  
@@ -28,6 +31,7 @@ This course is a collaborative effort created by multiple contributors. Each col
 14. **Media Queries** – Responsive design basics.  
 
 ### 2. JavaScript (Core Concepts)  
+
 14. **JavaScript Basics** – Syntax, operators, `console.log()`.  
 16. **Variables and Data Types** – `let`, `const`, `var`, primitive vs non-primitive.  
 17. **Arrays and Objects (JSON)** – Basic operations, nesting.  
@@ -35,11 +39,12 @@ This course is a collaborative effort created by multiple contributors. Each col
 19. **Loops** – `for`, `while`, `for…of`, `forEach`.  
 20. **Functions** – Regular and arrow functions.  
 21. **Modular Programming** – Import/export modules.  
-22. **OOP Basics** – Why use OOP, classes and object, constryctio, inheritance, polymorphism. 
+22. **OOP Basics** – Why use OOP, classes and object, constryctio, inheritance, polymorphism.
 28. **DOM** – Accessing/modifying elements.  
 29. **Events** – Event listeners, user interactions.  
 
 ### 3. Backend (Node.js + Express)  
+
 24. **Node.js Introduction** – What is Node.js, running scripts.  
 31. **Express.js Introduction** – Setting up an Express server.  
 32. **Request and Response** – Using `req` and `res`.  
@@ -47,12 +52,14 @@ This course is a collaborative effort created by multiple contributors. Each col
 34. **Middleware** – Custom middleware, authentication, logging.  
 
 ### 4. Database (MongoDB + Mongoose)  
+
 29. **Database Basics** – What databases are, relational vs non-relational.  
 36. **MongoDB Introduction** – Collections, documents, BSON.  
 37. **Mongoose Introduction** – Why use Mongoose, schemas, and models.  
-38. **CRUD with Mongoose** – Create, Read, Update, Delete operations.    
+38. **CRUD with Mongoose** – Create, Read, Update, Delete operations.
 
 ### 5. Frontend Frameworks (React + Next.js)  
+
 33. **React Introduction** – What React is, why it’s popular.  
 41. **useState** – State management basics.  
 42. **useEffect** – Side effects.  

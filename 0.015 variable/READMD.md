@@ -8,7 +8,7 @@ Have you ever thought about how a program remembers things — like your name, a
 
 A **variable** is like a box where you can store something (like numbers, text, or even objects). You can name that box and later open it to get or change what’s inside.
 
-### Syntax to Declare Variables:
+### Syntax to Declare Variables
 
 ```js
 let name = "Pramish";   // variable that can change
@@ -16,13 +16,13 @@ const PI = 3.14;         // constant that cannot change
 var age = 13;            // old way (avoid using var)
 ```
 
-### Explanation:
+### Explanation
 
 * `let` → Used when the value **can change** later.
 * `const` → Used when the value **must stay the same**.
 * `var` → Older way; works but not recommended (has scope issues).
 
-### Example:
+### Example
 
 ```js
 let score = 10;
@@ -76,26 +76,26 @@ console.log(arr1); // [1,2,3] (stored by reference)
 
 Let’s look at how JavaScript behaves with operations:
 
-### Normal Number Operations:
+### Normal Number Operations
 
 ```js
 console.log(1 + 1);  // 2
 console.log(2 * 3);  // 6
 ```
 
-### String + Number:
+### String + Number
 
 ```js
 console.log("1" + 1); // "11" (string + number = string)
 console.log("2" * 3); // 6   (string is converted to number)
 ```
 
-### Why this happens:
+### Why this happens
 
 * `+` joins strings → it **converts numbers to text**.
 * `*`, `/`, `-` treat strings as **numbers** if possible.
 
-### Example:
+### Example
 
 ```js
 console.log(10 + "5");   // "105"

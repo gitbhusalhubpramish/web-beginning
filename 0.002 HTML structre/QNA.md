@@ -33,6 +33,7 @@ A4. The `<title>` tag sets the **title of the webpage**, displayed in the browse
 
 **Q1. How do you write a comment in HTML?**  
 A1. Comments in HTML are written using:  
+
 ```html
 <!-- This is a comment -->
 ```
