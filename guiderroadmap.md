@@ -35,30 +35,25 @@ This course is a collaborative effort created by multiple contributors. Each col
 19. **Loops** – `for`, `while`, `for…of`, `forEach`.  
 20. **Functions** – Regular and arrow functions.  
 21. **Modular Programming** – Import/export modules.  
-22. **OOP Basics** – Why use OOP.  
-23. **Classes and Objects** – Syntax, examples.  
-24. **Methods** – Class methods and usage.  
-25. **Constructor** – Creating constructors (note: no destructors in JS, but garbage collection exists).  
-26. **Inheritance** – Extending classes, `super`.  
-27. **Polymorphism (Optional)** – Concept + method overriding.  
+22. **OOP Basics** – Why use OOP, classes and object, constryctio, inheritance, polymorphism. 
 28. **DOM** – Accessing/modifying elements.  
 29. **Events** – Event listeners, user interactions.  
 
 ### 3. Backend (Node.js + Express)  
-29. **Node.js Introduction** – What is Node.js, running scripts.  
+24. **Node.js Introduction** – What is Node.js, running scripts.  
 31. **Express.js Introduction** – Setting up an Express server.  
 32. **Request and Response** – Using `req` and `res`.  
 33. **HTTP Methods** – GET, POST, PUT, DELETE.  
 34. **Middleware** – Custom middleware, authentication, logging.  
 
 ### 4. Database (MongoDB + Mongoose)  
-34. **Database Basics** – What databases are, relational vs non-relational.  
+29. **Database Basics** – What databases are, relational vs non-relational.  
 36. **MongoDB Introduction** – Collections, documents, BSON.  
 37. **Mongoose Introduction** – Why use Mongoose, schemas, and models.  
 38. **CRUD with Mongoose** – Create, Read, Update, Delete operations.    
 
 ### 5. Frontend Frameworks (React + Next.js)  
-38. **React Introduction** – What React is, why it’s popular.  
+33. **React Introduction** – What React is, why it’s popular.  
 41. **useState** – State management basics.  
 42. **useEffect** – Side effects.  
 43. **useContext** – Context API for global state.  
