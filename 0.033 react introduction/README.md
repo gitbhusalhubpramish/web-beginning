@@ -276,6 +276,7 @@ npm run dev
 #### **Option 3: Online Playground (No Installation)**
 
 For quick experimentation, use:
+
 - **CodeSandbox**: [codesandbox.io](https://codesandbox.io/s/react)
 - **CodePen**: [codepen.io](https://codepen.io/pen)
 - **StackBlitz**: [stackblitz.com](https://stackblitz.com/fork/react)
@@ -354,4 +355,4 @@ Head over to the `qna.md` file to test your understanding with hands-on exercise
 
 ---
 
-Created by [aakku106](https://github.com/aakku106) - Making React accessible for everyone! ⚛️
+Created by [aakku106](https://github.com/aakku106) - Making web development fun and accessible for everyone! 🚀

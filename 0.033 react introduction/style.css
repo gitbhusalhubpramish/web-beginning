@@ -165,7 +165,7 @@ button:active {
 
 /* Override for React component buttons to use their inline styles */
 #buttons-demo button {
-  background: inherit !important;
+  background: unset !important; /* Reset background so inline styles work */
   transition: all 0.3s ease;
 }
 
@@ -184,7 +184,7 @@ button:active {
 .components-demo button {
   margin: 10px;
   min-width: 120px;
-  background: inherit !important; /* Let React control the background */
+  background: unset !important; /* Reset so React inline styles work */
 }
 
 /* State demo */

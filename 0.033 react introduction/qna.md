@@ -502,4 +502,4 @@ After understanding React basics, your learning path should include:
 
 ---
 
-Created by [aakku106](https://github.com/aakku106) - Making React accessible for everyone! ⚛️
+Created by [aakku106](https://github.com/aakku106) - Making web development fun and accessible for everyone! 🚀
