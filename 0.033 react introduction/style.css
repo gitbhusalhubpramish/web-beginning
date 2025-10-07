@@ -163,6 +163,18 @@ button:active {
   transform: translateY(0);
 }
 
+/* Override for React component buttons to use their inline styles */
+#buttons-demo button {
+  background: inherit !important;
+  transition: all 0.3s ease;
+}
+
+#buttons-demo button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  opacity: 0.9;
+}
+
 /* Components demo */
 .components-demo {
   text-align: center;
@@ -172,6 +184,7 @@ button:active {
 .components-demo button {
   margin: 10px;
   min-width: 120px;
+  background: inherit !important; /* Let React control the background */
 }
 
 /* State demo */

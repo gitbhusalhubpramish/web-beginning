@@ -242,6 +242,51 @@ Before learning React, make sure you're comfortable with:
 ✅ **ES6+** - Modern JavaScript features (arrow functions, destructuring, etc.)  
 ✅ **DOM Manipulation** - How to interact with web page elements
 
+### How to Install and Set Up React
+
+#### **Option 1: Create React App (Recommended for Beginners)**
+
+```bash
+# 1. First, install Node.js from https://nodejs.org
+# 2. Open terminal/command prompt
+# 3. Create a new React project
+npx create-react-app my-first-react-app
+
+# 4. Navigate to the project folder
+cd my-first-react-app
+
+# 5. Start the development server
+npm start
+```
+
+#### **Option 2: Vite (Faster Alternative)**
+
+```bash
+# Create a new React project with Vite
+npm create vite@latest my-react-app -- --template react
+
+# Navigate and install dependencies
+cd my-react-app
+npm install
+
+# Start the development server
+npm run dev
+```
+
+#### **Option 3: Online Playground (No Installation)**
+
+For quick experimentation, use:
+- **CodeSandbox**: [codesandbox.io](https://codesandbox.io/s/react)
+- **CodePen**: [codepen.io](https://codepen.io/pen)
+- **StackBlitz**: [stackblitz.com](https://stackblitz.com/fork/react)
+
+### Useful Resources
+
+- **Official React Documentation**: [react.dev](https://react.dev)
+- **React Tutorial**: [react.dev/learn](https://react.dev/learn)
+- **Create React App Docs**: [create-react-app.dev](https://create-react-app.dev)
+- **React GitHub**: [github.com/facebook/react](https://github.com/facebook/react)
+
 ### What's Next?
 
 After understanding what React is, you'll learn:
