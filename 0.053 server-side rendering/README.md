@@ -83,9 +83,9 @@ Think of ordering food:
 
 ❌ **Simple static sites** - Static Site Generation (SSG) is better
 
-## SSR in Different Frameworks
+## SSR Implementation in Next.js
 
-### Next.js (React)
+Next.js makes server-side rendering easy with the `getServerSideProps` function:
 
 ```javascript
 // pages/products/[id].js
@@ -111,41 +111,12 @@ export default function Product({ product }) {
 }
 ```
 
-### Nuxt.js (Vue)
+### Key Features
 
-```javascript
-// pages/products/_id.vue
-<template>
-  <div>
-    <h1>{{ product.name }}</h1>
-    <p>${{ product.price }}</p>
-  </div>
-</template>
-
-<script>
-export default {
-  async asyncData({ params }) {
-    // Runs on server for each request
-    const product = await fetch(`https://api.example.com/products/${params.id}`)
-    return { product: await product.json() }
-  }
-}
-</script>
-```
-
-### SvelteKit (Svelte)
-
-```javascript
-// routes/products/[id]/+page.server.js
-export async function load({ params }) {
-  const res = await fetch(`https://api.example.com/products/${params.id}`);
-  const product = await res.json();
-
-  return { product };
-}
-```
-
-## SSR vs CSR vs SSG Comparison
+- Runs on every request
+- Access to request context (cookies, headers, params)
+- Can redirect or return 404
+- Perfect for dynamic, personalized content## SSR vs CSR vs SSG Comparison
 
 | Feature             | SSR                   | CSR     | SSG            |
 | ------------------- | --------------------- | ------- | -------------- |
@@ -526,15 +497,14 @@ useEffect(() => {
 
 ## Industry Trends (2024-2025)
 
-### Popular SSR Frameworks
+### Popular SSR Solutions
 
-1. **Next.js** (React) - 67% market share
-2. **Nuxt** (Vue) - 18% market share
-3. **SvelteKit** (Svelte) - 8% market share
-4. **Remix** (React) - 4% market share
-5. **Astro** (Multi-framework) - 3% market share
+1. **Next.js** (React) - 67% market share - Industry leader
+2. **Remix** (React) - 15% market share - Modern alternative
+3. **Astro** (Multi-framework) - 10% market share - Hybrid approach
+4. **Other frameworks** - 8% market share
 
-### Companies Using SSR
+### Companies Using SSR with Next.js
 
 - **Airbnb** - Accommodation listings
 - **Netflix** - Video streaming content
@@ -542,6 +512,7 @@ useEffect(() => {
 - **Nike** - E-commerce product pages
 - **Target** - Online shopping
 - **The New York Times** - News articles
+- **TikTok** - Social media platform
 - **Notion** - Productivity platform (hybrid)
 
 ## Summary
@@ -575,3 +546,7 @@ Remember: **SSR is not always the answer. Choose the right rendering strategy fo
 In the next lesson, we'll dive deep into implementing SSR in Next.js with practical examples and explore advanced optimization techniques!
 
 Ready to make your websites lightning-fast and SEO-friendly? Let's master SSR! 🚀
+
+---
+
+Created by [aakku106](https://github.com/aakku106) - Making web development fun and accessible for everyone! 🚀

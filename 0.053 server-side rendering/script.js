@@ -17,23 +17,6 @@ function showTab(tabName) {
   event.target.classList.add("active");
 }
 
-// Framework Navigation
-function showFramework(frameworkName) {
-  // Hide all framework contents
-  document.querySelectorAll(".framework-content").forEach((content) => {
-    content.classList.remove("active");
-  });
-
-  // Remove active class from all framework buttons
-  document.querySelectorAll(".framework-btn").forEach((btn) => {
-    btn.classList.remove("active");
-  });
-
-  // Show selected framework
-  document.getElementById(frameworkName).classList.add("active");
-  event.target.classList.add("active");
-}
-
 // Copy Code Functionality
 async function copyCode(button) {
   const codeBlock = button.closest(".code-example").querySelector("code");
