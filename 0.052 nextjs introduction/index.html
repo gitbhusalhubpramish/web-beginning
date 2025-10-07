@@ -1,0 +1,467 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Next.js vs React - Interactive Examples</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>🚀 Next.js vs React: Interactive Examples</h1>
+        <p class="subtitle">
+          Understanding the differences between React and Next.js
+        </p>
+      </header>
+
+      <nav class="tab-navigation">
+        <button class="tab-btn active" onclick="showTab('routing')">
+          Routing
+        </button>
+        <button class="tab-btn" onclick="showTab('rendering')">
+          Rendering
+        </button>
+        <button class="tab-btn" onclick="showTab('performance')">
+          Performance
+        </button>
+        <button class="tab-btn" onclick="showTab('setup')">Setup</button>
+      </nav>
+
+      <!-- Routing Example -->
+      <div id="routing" class="tab-content active">
+        <h2>🧭 Routing Comparison</h2>
+
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <h3>React (Manual Routing)</h3>
+            <div class="code-block">
+              <pre><code>// Install React Router
+npm install react-router-dom
+
+// App.js
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './Home';
+import About from './About';
+
+function App() {
+  return (
+    &lt;BrowserRouter&gt;
+      &lt;Routes&gt;
+        &lt;Route path="/" element={&lt;Home /&gt;} /&gt;
+        &lt;Route path="/about" element={&lt;About /&gt;} /&gt;
+      &lt;/Routes&gt;
+    &lt;/BrowserRouter&gt;
+  );
+}</code></pre>
+            </div>
+            <div class="pros-cons">
+              <div class="cons">
+                <h4>❌ Challenges:</h4>
+                <ul>
+                  <li>Manual setup required</li>
+                  <li>Extra dependencies</li>
+                  <li>Configuration needed</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <h3>Next.js (File-Based Routing)</h3>
+            <div class="code-block">
+              <pre><code>// No installation needed!
+// Just create files in pages folder
+
+pages/
+  index.js     → yoursite.com/
+  about.js     → yoursite.com/about
+  blog/
+    index.js   → yoursite.com/blog
+    [id].js    → yoursite.com/blog/123
+
+// pages/index.js
+export default function Home() {
+  return &lt;h1&gt;Home Page&lt;/h1&gt;
+}
+
+// pages/about.js  
+export default function About() {
+  return &lt;h1&gt;About Page&lt;/h1&gt;
+}</code></pre>
+            </div>
+            <div class="pros-cons">
+              <div class="pros">
+                <h4>✅ Benefits:</h4>
+                <ul>
+                  <li>Zero configuration</li>
+                  <li>Automatic routing</li>
+                  <li>Dynamic routes built-in</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="interactive-demo">
+          <h3>🎯 Try It: File-Based Routing Simulator</h3>
+          <div class="routing-simulator">
+            <div class="file-structure">
+              <h4>pages/</h4>
+              <div class="file" onclick="showRoute('/')">📄 index.js</div>
+              <div class="file" onclick="showRoute('/about')">📄 about.js</div>
+              <div class="file" onclick="showRoute('/contact')">
+                📄 contact.js
+              </div>
+              <div class="folder">
+                📁 blog/
+                <div class="file nested" onclick="showRoute('/blog')">
+                  📄 index.js
+                </div>
+                <div class="file nested" onclick="showRoute('/blog/[slug]')">
+                  [📄 slug].js
+                </div>
+              </div>
+            </div>
+            <div class="route-display">
+              <h4>Generated Routes:</h4>
+              <div id="route-output">Click on files to see routes!</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rendering Example -->
+      <div id="rendering" class="tab-content">
+        <h2>🎨 Rendering Methods</h2>
+
+        <div class="comparison-grid">
+          <div class="comparison-item">
+            <h3>React (Client-Side Rendering)</h3>
+            <div class="code-block">
+              <pre><code>// React App
+function App() {
+  const [data, setData] = useState(null);
+  
+  useEffect(() => {
+    // Fetch data after component mounts
+    fetch('/api/data')
+      .then(res => res.json())
+      .then(setData);
+  }, []);
+
+  if (!data) return &lt;div&gt;Loading...&lt;/div&gt;;
+  
+  return &lt;div&gt;{data.content}&lt;/div&gt;;
+}</code></pre>
+            </div>
+            <div class="rendering-flow">
+              <h4>How it works:</h4>
+              <ol>
+                <li>Browser loads empty HTML</li>
+                <li>JavaScript downloads</li>
+                <li>React renders components</li>
+                <li>Data fetched from API</li>
+                <li>Content appears</li>
+              </ol>
+            </div>
+          </div>
+
+          <div class="comparison-item">
+            <h3>Next.js (Multiple Options)</h3>
+            <div class="code-block">
+              <pre><code>// Static Generation (SSG)
+export async function getStaticProps() {
+  const data = await fetch('https://api.example.com/data');
+  return { props: { data } };
+}
+
+// Server-Side Rendering (SSR)
+export async function getServerSideProps() {
+  const data = await fetch('https://api.example.com/data');
+  return { props: { data } };
+}
+
+// Component receives data as props
+function Page({ data }) {
+  return &lt;div&gt;{data.content}&lt;/div&gt;;
+}</code></pre>
+            </div>
+            <div class="rendering-flow">
+              <h4>How it works:</h4>
+              <ol>
+                <li>Data fetched on server</li>
+                <li>HTML generated with content</li>
+                <li>Full page sent to browser</li>
+                <li>Instant content display</li>
+                <li>React hydrates for interactivity</li>
+              </ol>
+            </div>
+          </div>
+        </div>
+
+        <div class="interactive-demo">
+          <h3>🎯 Experience the Difference</h3>
+          <div class="rendering-demo">
+            <button class="demo-btn" onclick="simulateCSR()">
+              Simulate React CSR
+            </button>
+            <button class="demo-btn" onclick="simulateSSR()">
+              Simulate Next.js SSR
+            </button>
+            <div id="rendering-output">
+              <div class="demo-screen">
+                Click a button to see rendering simulation
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Performance Example -->
+      <div id="performance" class="tab-content">
+        <h2>⚡ Performance Comparison</h2>
+
+        <div class="performance-grid">
+          <div class="metric-card">
+            <h3>Initial Page Load</h3>
+            <div class="metric-comparison">
+              <div class="metric-item react">
+                <h4>React</h4>
+                <div class="loading-bar">
+                  <div class="progress" style="width: 75%"></div>
+                </div>
+                <span>3.2s average</span>
+              </div>
+              <div class="metric-item nextjs">
+                <h4>Next.js</h4>
+                <div class="loading-bar">
+                  <div class="progress" style="width: 35%"></div>
+                </div>
+                <span>1.1s average</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <h3>SEO Score</h3>
+            <div class="metric-comparison">
+              <div class="metric-item react">
+                <h4>React</h4>
+                <div class="score-circle" data-score="65">65</div>
+                <span>Client-side only</span>
+              </div>
+              <div class="metric-item nextjs">
+                <h4>Next.js</h4>
+                <div class="score-circle" data-score="95">95</div>
+                <span>Server-rendered</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="metric-card">
+            <h3>Bundle Size</h3>
+            <div class="metric-comparison">
+              <div class="metric-item react">
+                <h4>React</h4>
+                <div class="size-bar">
+                  <div class="size" style="width: 60%"></div>
+                </div>
+                <span>242 KB</span>
+              </div>
+              <div class="metric-item nextjs">
+                <h4>Next.js</h4>
+                <div class="size-bar">
+                  <div class="size" style="width: 40%"></div>
+                </div>
+                <span>156 KB (split)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="optimization-features">
+          <h3>🎯 Next.js Automatic Optimizations</h3>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">🖼️</div>
+              <h4>Image Optimization</h4>
+              <p>
+                Automatic image compression, lazy loading, and modern formats
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">📦</div>
+              <h4>Code Splitting</h4>
+              <p>Automatic page-level code splitting for faster loads</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">🔄</div>
+              <h4>Prefetching</h4>
+              <p>Intelligent prefetching of linked pages</p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">⚡</div>
+              <h4>Static Generation</h4>
+              <p>Pre-build pages at build time for instant loading</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Setup Example -->
+      <div id="setup" class="tab-content">
+        <h2>🛠️ Project Setup Comparison</h2>
+
+        <div class="setup-comparison">
+          <div class="setup-method">
+            <h3>React Setup (Manual)</h3>
+            <div class="setup-steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Create React App</h4>
+                  <code>npx create-react-app my-app</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                  <h4>Install Routing</h4>
+                  <code>npm install react-router-dom</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                  <h4>Configure Router</h4>
+                  <code>Setup BrowserRouter, Routes, Route</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                  <h4>Add State Management</h4>
+                  <code>npm install redux @reduxjs/toolkit</code>
+                </div>
+              </div>
+              <div class="step">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                  <h4>Setup Build Tools</h4>
+                  <code>Configure webpack, babel, etc.</code>
+                </div>
+              </div>
+            </div>
+            <div class="setup-time">⏱️ Setup Time: ~2-4 hours</div>
+          </div>
+
+          <div class="setup-method">
+            <h3>Next.js Setup (Automatic)</h3>
+            <div class="setup-steps">
+              <div class="step">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                  <h4>Create Next.js App</h4>
+                  <code>npx create-next-app@latest my-app</code>
+                </div>
+              </div>
+              <div class="step completed">
+                <div class="step-number">✓</div>
+                <div class="step-content">
+                  <h4>Routing Included</h4>
+                  <span class="included">File-based routing ready!</span>
+                </div>
+              </div>
+              <div class="step completed">
+                <div class="step-number">✓</div>
+                <div class="step-content">
+                  <h4>SSR/SSG Included</h4>
+                  <span class="included">Server-side rendering ready!</span>
+                </div>
+              </div>
+              <div class="step completed">
+                <div class="step-number">✓</div>
+                <div class="step-content">
+                  <h4>API Routes Included</h4>
+                  <span class="included">Backend endpoints ready!</span>
+                </div>
+              </div>
+              <div class="step completed">
+                <div class="step-number">✓</div>
+                <div class="step-content">
+                  <h4>Optimizations Included</h4>
+                  <span class="included"
+                    >Image optimization, code splitting ready!</span
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="setup-time">⏱️ Setup Time: ~2-5 minutes</div>
+          </div>
+        </div>
+
+        <div class="interactive-demo">
+          <h3>🎯 Try Command Simulator</h3>
+          <div class="terminal-simulator">
+            <div class="terminal-header">
+              <div class="terminal-buttons">
+                <span class="btn-close"></span>
+                <span class="btn-minimize"></span>
+                <span class="btn-maximize"></span>
+              </div>
+              <span class="terminal-title">Terminal</span>
+            </div>
+            <div class="terminal-content">
+              <div class="terminal-line">$ <span class="cursor">|</span></div>
+              <div id="terminal-output"></div>
+            </div>
+            <div class="terminal-commands">
+              <button
+                class="terminal-cmd"
+                onclick="runCommand('create-react-app')">
+                React Setup
+              </button>
+              <button
+                class="terminal-cmd"
+                onclick="runCommand('create-next-app')">
+                Next.js Setup
+              </button>
+              <button class="terminal-cmd" onclick="clearTerminal()">
+                Clear
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="next-steps">
+          <h3>🎯 Ready to Try Next.js?</h3>
+          <p>
+            Start with the official Next.js tutorial and create your first
+            application!
+          </p>
+          <div class="action-buttons">
+            <a
+              href="https://nextjs.org/learn"
+              target="_blank"
+              class="btn-primary"
+              >Next.js Tutorial</a
+            >
+            <a
+              href="https://nextjs.org/docs"
+              target="_blank"
+              class="btn-secondary"
+              >Documentation</a
+            >
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
