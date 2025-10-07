@@ -418,7 +418,7 @@ function TodoApp() {
 
 ### Challenge 2: Career Perspective
 
-**Task:** Why should a beginner web developer learn React in 2024?
+**Task:** Why should a beginner web developer learn React in 2025/26?
 
 **Solution:**
 

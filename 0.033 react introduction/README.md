@@ -133,12 +133,14 @@ React has:
 React developers are in high demand worldwide:
 
 **Salary Ranges:**
+
 - **Nepal**: NPR 8-35 LPA (many work remotely for global companies)
 - **India**: ₹6-25 LPA (huge local market + outsourcing)
 - **USA**: $60,000-$150,000+ annually
 - **Global Remote**: $30,000-$100,000+ annually
 
 **Career Benefits:**
+
 - **Remote work opportunities** - Work from Nepal for global companies
 - Used by **top companies worldwide**
 - **Future-proof skill** - React continues to evolve
