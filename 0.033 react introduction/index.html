@@ -1,0 +1,643 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>React Introduction - Interactive Examples</title>
+    <link rel="stylesheet" href="style.css" />
+    <!-- React CDN for simple demonstrations -->
+    <script
+      crossorigin
+      src="https://unpkg.com/react@18/umd/react.development.js"></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"></script>
+    <!-- Babel for JSX transformation -->
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>⚛️ React Introduction - Interactive Examples</h1>
+        <p>See the power of React compared to traditional JavaScript!</p>
+      </header>
+
+      <main>
+        <!-- What is React Demo -->
+        <section class="demo-section">
+          <h2>1. What is React?</h2>
+          <p>
+            React is a JavaScript library for building user interfaces. Let's
+            see it in action!
+          </p>
+          <div class="demo-area">
+            <div class="comparison">
+              <div class="vanilla-js">
+                <h3>Traditional JavaScript</h3>
+                <div id="vanilla-demo">
+                  <p>Name: <span id="vanilla-name">Guest</span></p>
+                  <input
+                    type="text"
+                    id="vanilla-input"
+                    placeholder="Enter your name" />
+                  <button onclick="updateVanillaName()">Update Name</button>
+                </div>
+              </div>
+              <div class="react-demo">
+                <h3>React Way</h3>
+                <div id="react-demo"></div>
+              </div>
+            </div>
+          </div>
+          <div class="code-display">
+            <h3>Code Comparison:</h3>
+            <div class="code-comparison">
+              <div class="vanilla-code">
+                <h4>Vanilla JavaScript (Multiple Steps)</h4>
+                <pre><code>function updateVanillaName() {
+    const input = document.getElementById('vanilla-input');
+    const nameSpan = document.getElementById('vanilla-name');
+    const name = input.value || 'Guest';
+    nameSpan.textContent = name;
+}</code></pre>
+              </div>
+              <div class="react-code">
+                <h4>React (Automatic Updates)</h4>
+                <pre><code>function NameApp() {
+    const [name, setName] = React.useState('Guest');
+    return (
+        &lt;div&gt;
+            &lt;p&gt;Name: {name}&lt;/p&gt;
+            &lt;input onChange={(e) =&gt; setName(e.target.value)} /&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Component Reusability -->
+        <section class="demo-section">
+          <h2>2. Component Reusability</h2>
+          <p>
+            React components are like LEGO blocks - build once, use everywhere!
+          </p>
+          <div class="demo-area">
+            <div class="components-demo">
+              <h3>Reusable Button Component</h3>
+              <div id="buttons-demo"></div>
+            </div>
+          </div>
+          <div class="code-display">
+            <h3>React Component Code:</h3>
+            <pre><code>function Button({ text, variant, onClick }) {
+    return (
+        &lt;button 
+            className={`btn btn-${variant}`}
+            onClick={onClick}
+        &gt;
+            {text}
+        &lt;/button&gt;
+    );
+}
+
+// Use the same component multiple times
+&lt;Button text="Success" variant="success" onClick={handleSuccess} /&gt;
+&lt;Button text="Warning" variant="warning" onClick={handleWarning} /&gt;
+&lt;Button text="Danger" variant="danger" onClick={handleDanger} /&gt;</code></pre>
+          </div>
+        </section>
+
+        <!-- State Management Demo -->
+        <section class="demo-section">
+          <h2>3. State Management</h2>
+          <p>React automatically updates the UI when data changes!</p>
+          <div class="demo-area">
+            <div class="state-demo">
+              <h3>Shopping Cart Example</h3>
+              <div id="cart-demo"></div>
+            </div>
+          </div>
+          <div class="code-display">
+            <h3>React State Management:</h3>
+            <pre><code>function ShoppingCart() {
+    const [items, setItems] = React.useState([]);
+    const [total, setTotal] = React.useState(0);
+
+    const addItem = (item) =&gt; {
+        setItems([...items, item]);
+        setTotal(total + item.price);
+    };
+
+    return (
+        &lt;div&gt;
+            &lt;h4&gt;Items: {items.length}&lt;/h4&gt;
+            &lt;h4&gt;Total: Rs {total}&lt;/h4&gt;
+            {/* React automatically updates UI */}
+        &lt;/div&gt;
+    );
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- Virtual DOM Demo -->
+        <section class="demo-section">
+          <h2>4. Virtual DOM Performance</h2>
+          <p>React's Virtual DOM makes updates lightning fast!</p>
+          <div class="demo-area">
+            <div class="performance-demo">
+              <h3>List Updates Comparison</h3>
+              <div class="comparison">
+                <div class="vanilla-performance">
+                  <h4>Traditional DOM Updates</h4>
+                  <div id="vanilla-list">
+                    <p>Loading...</p>
+                  </div>
+                  <button onclick="updateVanillaList()">
+                    Update List (Slow)
+                  </button>
+                  <p class="performance-note">Updates entire list every time</p>
+                </div>
+                <div class="react-performance">
+                  <h4>React Virtual DOM</h4>
+                  <div id="react-list"></div>
+                  <p class="performance-note">Updates only changed items</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="code-display">
+            <h3>Performance Difference:</h3>
+            <div class="code-comparison">
+              <div class="vanilla-code">
+                <h4>Traditional Way</h4>
+                <pre><code>// Updates entire list HTML
+function updateVanillaList() {
+    const list = document.getElementById('vanilla-list');
+    // Recreates entire DOM structure
+    list.innerHTML = generateListHTML();
+}</code></pre>
+              </div>
+              <div class="react-code">
+                <h4>React Way</h4>
+                <pre><code>// React intelligently updates only changes
+function ListComponent() {
+    const [items, setItems] = useState([]);
+    
+    // React automatically optimizes updates
+    return items.map(item =&gt; 
+        &lt;ListItem key={item.id} item={item} /&gt;
+    );
+}</code></pre>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Real-world Example -->
+        <section class="demo-section">
+          <h2>5. Real-World Example: Todo App</h2>
+          <p>See how React makes building interactive apps simple!</p>
+          <div class="demo-area">
+            <div class="todo-demo">
+              <h3>React Todo Application</h3>
+              <div id="todo-app"></div>
+            </div>
+          </div>
+          <div class="code-display">
+            <h3>Complete Todo App in React:</h3>
+            <pre><code>function TodoApp() {
+    const [todos, setTodos] = React.useState([]);
+    const [input, setInput] = React.useState('');
+
+    const addTodo = () =&gt; {
+        if (input.trim()) {
+            setTodos([...todos, { id: Date.now(), text: input, done: false }]);
+            setInput('');
+        }
+    };
+
+    const toggleTodo = (id) =&gt; {
+        setTodos(todos.map(todo =&gt; 
+            todo.id === id ? { ...todo, done: !todo.done } : todo
+        ));
+    };
+
+    return (
+        &lt;div&gt;
+            &lt;input 
+                value={input} 
+                onChange={(e) =&gt; setInput(e.target.value)}
+                placeholder="Add a todo..."
+            /&gt;
+            &lt;button onClick={addTodo}&gt;Add&lt;/button&gt;
+            {todos.map(todo =&gt; (
+                &lt;div key={todo.id}&gt;
+                    &lt;input 
+                        type="checkbox" 
+                        checked={todo.done}
+                        onChange={() =&gt; toggleTodo(todo.id)}
+                    /&gt;
+                    &lt;span style={{textDecoration: todo.done ? 'line-through' : 'none'}}&gt;
+                        {todo.text}
+                    &lt;/span&gt;
+                &lt;/div&gt;
+            ))}
+        &lt;/div&gt;
+    );
+}</code></pre>
+          </div>
+        </section>
+
+        <!-- Why React is Popular -->
+        <section class="demo-section">
+          <h2>6. Why React is Popular</h2>
+          <div class="demo-area">
+            <div class="popularity-stats">
+              <div class="stat-card">
+                <h3>📊 Usage Statistics</h3>
+                <ul>
+                  <li>Used by <strong>Facebook, Netflix, Airbnb</strong></li>
+                  <li><strong>2+ million</strong> weekly NPM downloads</li>
+                  <li><strong>200k+</strong> GitHub stars</li>
+                  <li>
+                    <strong>Top 3</strong> most popular frontend framework
+                  </li>
+                </ul>
+              </div>
+              <div class="stat-card">
+                <h3>💼 Global Job Market</h3>
+                <ul>
+                  <li><strong>Nepal:</strong> NPR 8-35 LPA</li>
+                  <li><strong>India:</strong> ₹6-25 LPA</li>
+                  <li><strong>USA:</strong> $60-150k annually</li>
+                  <li><strong>Remote:</strong> $30-100k globally</li>
+                </ul>
+              </div>
+              <div class="stat-card">
+                <h3>🚀 Developer Experience</h3>
+                <ul>
+                  <li><strong>Fast development</strong></li>
+                  <li><strong>Easy to learn</strong></li>
+                  <li><strong>Great tooling</strong></li>
+                  <li><strong>Huge community</strong></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- Getting Started -->
+        <section class="demo-section">
+          <h2>7. Getting Started with React</h2>
+          <div class="demo-area">
+            <div class="getting-started">
+              <h3>Prerequisites Checklist</h3>
+              <div class="checklist">
+                <label><input type="checkbox" /> HTML fundamentals</label>
+                <label><input type="checkbox" /> CSS styling</label>
+                <label><input type="checkbox" /> JavaScript basics</label>
+                <label
+                  ><input type="checkbox" /> ES6+ features (arrow functions,
+                  destructuring)</label
+                >
+                <label><input type="checkbox" /> DOM manipulation</label>
+              </div>
+
+              <h3>Next Steps</h3>
+              <div class="next-steps">
+                <div class="step">
+                  <strong>1. Environment Setup</strong>
+                  <p>Install Node.js and create your first React app</p>
+                </div>
+                <div class="step">
+                  <strong>2. JSX Syntax</strong>
+                  <p>Learn to write HTML-like code in JavaScript</p>
+                </div>
+                <div class="step">
+                  <strong>3. Components</strong>
+                  <p>Build reusable UI components</p>
+                </div>
+                <div class="step">
+                  <strong>4. Props & State</strong>
+                  <p>Manage data flow and component state</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>
+        <p>
+          🎉 Ready to dive deeper into React? Check out the practice questions!
+        </p>
+        <p>
+          Created by
+          <a
+            href="https://github.com/aakku106"
+            target="_blank"
+            style="color: #61dafb; text-decoration: none"
+            >aakku106</a
+          >
+          - Making web development fun and accessible for everyone! 🚀
+        </p>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+
+    <!-- React Components Script -->
+    <script type="text/babel">
+      // React Component for Name Demo
+      function NameApp() {
+        const [name, setName] = React.useState("Guest");
+
+        return React.createElement(
+          "div",
+          null,
+          React.createElement("p", null, "Name: ", name),
+          React.createElement("input", {
+            type: "text",
+            placeholder: "Enter your name",
+            onChange: (e) => setName(e.target.value || "Guest"),
+          })
+        );
+      }
+
+      // Reusable Button Component
+      function Button({ text, variant, onClick, message }) {
+        return React.createElement(
+          "button",
+          {
+            className: `btn btn-${variant}`,
+            onClick: () => onClick(message),
+          },
+          text
+        );
+      }
+
+      function ButtonsDemo() {
+        const [message, setMessage] = React.useState("Click a button!");
+
+        const handleClick = (msg) => setMessage(msg);
+
+        return React.createElement(
+          "div",
+          null,
+          React.createElement("p", null, "Message: ", message),
+          React.createElement(Button, {
+            text: "Success",
+            variant: "success",
+            onClick: handleClick,
+            message: "Success action completed! ✅",
+          }),
+          React.createElement(Button, {
+            text: "Warning",
+            variant: "warning",
+            onClick: handleClick,
+            message: "Warning: Please be careful! ⚠️",
+          }),
+          React.createElement(Button, {
+            text: "Danger",
+            variant: "danger",
+            onClick: handleClick,
+            message: "Danger: Action cannot be undone! 🚨",
+          })
+        );
+      }
+
+      // Shopping Cart Component
+      function ShoppingCart() {
+        const [items, setItems] = React.useState([]);
+        const [total, setTotal] = React.useState(0);
+
+        const products = [
+          { name: "Laptop", price: 50000 },
+          { name: "Phone", price: 20000 },
+          { name: "Headphones", price: 5000 },
+        ];
+
+        const addItem = (product) => {
+          setItems([...items, { ...product, id: Date.now() }]);
+          setTotal(total + product.price);
+        };
+
+        return React.createElement(
+          "div",
+          null,
+          React.createElement("h4", null, `Items in cart: ${items.length}`),
+          React.createElement(
+            "h4",
+            null,
+            `Total: Rs ${total.toLocaleString()}`
+          ),
+          React.createElement(
+            "div",
+            null,
+            products.map((product) =>
+              React.createElement(
+                "button",
+                {
+                  key: product.name,
+                  onClick: () => addItem(product),
+                  style: { margin: "5px", padding: "5px 10px" },
+                },
+                `Add ${product.name} (Rs ${product.price.toLocaleString()})`
+              )
+            )
+          ),
+          items.length > 0 &&
+            React.createElement(
+              "div",
+              null,
+              React.createElement("h5", null, "Cart Items:"),
+              items.map((item) =>
+                React.createElement(
+                  "p",
+                  { key: item.id },
+                  `${item.name} - Rs ${item.price.toLocaleString()}`
+                )
+              )
+            )
+        );
+      }
+
+      // Performance List Component
+      function PerformanceList() {
+        const [items, setItems] = React.useState([
+          "Item 1",
+          "Item 2",
+          "Item 3",
+        ]);
+
+        const addItem = () => {
+          setItems([...items, `Item ${items.length + 1}`]);
+        };
+
+        return React.createElement(
+          "div",
+          null,
+          items.map((item, index) =>
+            React.createElement("p", { key: index }, item)
+          ),
+          React.createElement(
+            "button",
+            {
+              onClick: addItem,
+              style: { marginTop: "10px" },
+            },
+            "Add Item (Fast)"
+          )
+        );
+      }
+
+      // Todo App Component
+      function TodoApp() {
+        const [todos, setTodos] = React.useState([
+          { id: 1, text: "Learn HTML", done: true },
+          { id: 2, text: "Learn CSS", done: true },
+          { id: 3, text: "Learn JavaScript", done: true },
+          { id: 4, text: "Learn React", done: false },
+        ]);
+        const [input, setInput] = React.useState("");
+
+        const addTodo = () => {
+          if (input.trim()) {
+            setTodos([...todos, { id: Date.now(), text: input, done: false }]);
+            setInput("");
+          }
+        };
+
+        const toggleTodo = (id) => {
+          setTodos(
+            todos.map((todo) =>
+              todo.id === id ? { ...todo, done: !todo.done } : todo
+            )
+          );
+        };
+
+        const deleteTodo = (id) => {
+          setTodos(todos.filter((todo) => todo.id !== id));
+        };
+
+        return React.createElement(
+          "div",
+          { style: { maxWidth: "400px" } },
+          React.createElement(
+            "div",
+            { style: { marginBottom: "20px" } },
+            React.createElement("input", {
+              type: "text",
+              value: input,
+              onChange: (e) => setInput(e.target.value),
+              placeholder: "Add a new todo...",
+              style: { padding: "8px", marginRight: "10px", width: "200px" },
+              onKeyPress: (e) => e.key === "Enter" && addTodo(),
+            }),
+            React.createElement(
+              "button",
+              {
+                onClick: addTodo,
+                style: {
+                  padding: "8px 15px",
+                  backgroundColor: "#61dafb",
+                  border: "none",
+                  borderRadius: "4px",
+                  cursor: "pointer",
+                },
+              },
+              "Add"
+            )
+          ),
+          React.createElement(
+            "div",
+            null,
+            todos.map((todo) =>
+              React.createElement(
+                "div",
+                {
+                  key: todo.id,
+                  style: {
+                    display: "flex",
+                    alignItems: "center",
+                    marginBottom: "10px",
+                    padding: "10px",
+                    backgroundColor: todo.done ? "#f0f0f0" : "#fff",
+                    border: "1px solid #ddd",
+                    borderRadius: "4px",
+                  },
+                },
+                React.createElement("input", {
+                  type: "checkbox",
+                  checked: todo.done,
+                  onChange: () => toggleTodo(todo.id),
+                  style: { marginRight: "10px" },
+                }),
+                React.createElement(
+                  "span",
+                  {
+                    style: {
+                      textDecoration: todo.done ? "line-through" : "none",
+                      flex: 1,
+                      color: todo.done ? "#888" : "#333",
+                    },
+                  },
+                  todo.text
+                ),
+                React.createElement(
+                  "button",
+                  {
+                    onClick: () => deleteTodo(todo.id),
+                    style: {
+                      backgroundColor: "#dc3545",
+                      color: "white",
+                      border: "none",
+                      padding: "4px 8px",
+                      borderRadius: "3px",
+                      cursor: "pointer",
+                      fontSize: "12px",
+                    },
+                  },
+                  "✕"
+                )
+              )
+            )
+          ),
+          React.createElement(
+            "p",
+            { style: { marginTop: "20px", fontSize: "14px", color: "#666" } },
+            `Total: ${todos.length} | Completed: ${
+              todos.filter((t) => t.done).length
+            } | Remaining: ${todos.filter((t) => !t.done).length}`
+          )
+        );
+      }
+
+      // Render all React components
+      ReactDOM.render(
+        React.createElement(NameApp),
+        document.getElementById("react-demo")
+      );
+      ReactDOM.render(
+        React.createElement(ButtonsDemo),
+        document.getElementById("buttons-demo")
+      );
+      ReactDOM.render(
+        React.createElement(ShoppingCart),
+        document.getElementById("cart-demo")
+      );
+      ReactDOM.render(
+        React.createElement(PerformanceList),
+        document.getElementById("react-list")
+      );
+      ReactDOM.render(
+        React.createElement(TodoApp),
+        document.getElementById("todo-app")
+      );
+    </script>
+  </body>
+</html>
