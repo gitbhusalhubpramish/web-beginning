@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Loops Practice Set Solutions</title>
+    <style>
+        body { font-family: Arial; padding: 20px; }
+        pre { background: #f4f4f4; padding: 10px; border: 1px solid #ccc; }
+        h2 { color: #2a7ae2; }
+    </style>
+</head>
+<body>
+    <h1>JavaScript Loops Practice Set Solutions</h1>
+
+    <h2>Q1: Basic for Loop</h2>
+    <p>Output:</p>
+    <pre id="q1-output"></pre>
+    <p>Code:</p>
+    <pre>
+for(let i=1;i<=10;i++){
+  console.log(i);
+}
+    </pre>
+
+    <h2>Q2: while Loop (Even numbers)</h2>
+    <pre id="q2-output"></pre>
+    <pre>
+let i=2;
+while(i<=20){
+  console.log(i);
+  i+=2;
+}
+    </pre>
+
+    <h2>Q3: do...while Loop (Countdown)</h2>
+    <pre id="q3-output"></pre>
+    <pre>
+let i=5;
+do{
+  console.log(i);
+  i--;
+}while(i>=1);
+    </pre>
+
+    <h2>Q4: for...in Loop (Object keys)</h2>
+    <pre id="q4-output"></pre>
+    <pre>
+let student={name:'Pramish',age:13,grade:8};
+for(let key in student){
+  console.log(key+': '+student[key]);
+}
+    </pre>
+
+    <h2>Q5: for...of Loop (Array values)</h2>
+    <pre id="q5-output"></pre>
+    <pre>
+let fruits=['Apple','Banana','Mango','Orange'];
+for(let fruit of fruits){
+  console.log(fruit);
+}
+    </pre>
+
+    <h2>Q6: Break Statement</h2>
+    <pre id="q6-output"></pre>
+    <pre>
+for(let i=1;i<=10;i++){
+  if(i===6) break;
+  console.log(i);
+}
+    </pre>
+
+    <h2>Q7: Continue Statement</h2>
+    <pre id="q7-output"></pre>
+    <pre>
+for(let i=1;i<=10;i++){
+  if(i===5) continue;
+  console.log(i);
+}
+    </pre>
+
+    <h2>Q8: Nested Loops (3x3 Grid)</h2>
+    <pre id="q8-output"></pre>
+    <pre>
+for(let i=1;i<=3;i++){
+  let row='';
+  for(let j=1;j<=3;j++){
+    row+=i+' ';
+  }
+  console.log(row);
+}
+    </pre>
+
+    <h2>Q9: Combined Practice (Array of Objects)</h2>
+    <pre id="q9-output"></pre>
+    <pre>
+let students=[{name:'A',age:12},{name:'B',age:14},{name:'C',age:11}];
+students.forEach(s=>{
+  if(s.age>12) console.log(s.name);
+});
+    </pre>
+
+    <h2>Challenge: Multiplication Table of 5</h2>
+    <pre id="q10-output"></pre>
+    <pre>
+for(let i=1;i<=10;i++){
+  console.log('5 x '+i+' = '+(5*i));
+}
+    </pre>
+
+    <script>
+        // Q1
+        document.getElementById('q1-output').textContent = (()=>{
+            let out='';
+            for(let i=1;i<=10;i++){ out+=i+'\n';}
+            return out;
+        })();
+
+        // Q2
+        document.getElementById('q2-output').textContent = (()=>{
+            let out='',i=2;
+            while(i<=20){ out+=i+'\n'; i+=2; }
+            return out;
+        })();
+
+        // Q3
+        document.getElementById('q3-output').textContent = (()=>{
+            let out='',i=5;
+            do{ out+=i+'\n'; i--; }while(i>=1);
+            return out;
+        })();
+
+        // Q4
+        document.getElementById('q4-output').textContent = (()=>{
+            let student={name:'Pramish',age:13,grade:8},out='';
+            for(let key in student){ out+=key+': '+student[key]+'\n';}
+            return out;
+        })();
+
+        // Q5
+        document.getElementById('q5-output').textContent = (()=>{
+            let fruits=['Apple','Banana','Mango','Orange'],out='';
+            for(let fruit of fruits){ out+=fruit+'\n';}
+            return out;
+        })();
+
+        // Q6
+        document.getElementById('q6-output').textContent = (()=>{
+            let out='';
+            for(let i=1;i<=10;i++){ if(i===6) break; out+=i+'\n';}
+            return out;
+        })();
+
+        // Q7
+        document.getElementById('q7-output').textContent = (()=>{
+            let out='';
+            for(let i=1;i<=10;i++){ if(i===5) continue; out+=i+'\n';}
+            return out;
+        })();
+
+        // Q8
+        document.getElementById('q8-output').textContent = (()=>{
+            let out='';
+            for(let i=1;i<=3;i++){
+                let row='';
+                for(let j=1;j<=3;j++){ row+=i+' '; }
+                out+=row+'\n';
+            }
+            return out;
+        })();
+
+        // Q9
+        document.getElementById('q9-output').textContent = (()=>{
+            let students=[{name:'A',age:12},{name:'B',age:14},{name:'C',age:11}],out='';
+            students.forEach(s=>{ if(s.age>12) out+=s.name+'\n'; });
+            return out;
+        })();
+
+        // Q10 Challenge
+        document.getElementById('q10-output').textContent = (()=>{
+            let out='';
+            for(let i=1;i<=10;i++){ out+='5 x '+i+' = '+(5*i)+'\n'; }
+            return out;
+        })();
+    </script>
+</body>
+</html>
