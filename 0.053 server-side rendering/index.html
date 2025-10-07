@@ -1,0 +1,439 @@
+<!-- @format -->
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Server-Side Rendering (SSR) - Interactive Guide</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1>⚡ Server-Side Rendering (SSR)</h1>
+        <p class="subtitle">
+          Understanding how SSR makes websites faster and more SEO-friendly
+        </p>
+      </header>
+
+      <nav class="tab-navigation">
+        <button class="tab-btn active" onclick="showTab('basics')">
+          SSR Basics
+        </button>
+        <button class="tab-btn" onclick="showTab('comparison')">
+          SSR vs CSR
+        </button>
+        <button class="tab-btn" onclick="showTab('visualization')">
+          Live Demo
+        </button>
+        <button class="tab-btn" onclick="showTab('implementation')">
+          Implementation
+        </button>
+      </nav>
+
+      <!-- SSR Basics Tab -->
+      <div id="basics" class="tab-content active">
+        <h2>🎯 What is Server-Side Rendering?</h2>
+
+        <div class="concept-cards">
+          <div class="concept-card">
+            <div class="concept-icon">🖥️</div>
+            <h3>Server</h3>
+            <p>Prepares complete HTML with all content</p>
+          </div>
+          <div class="concept-arrow">→</div>
+          <div class="concept-card">
+            <div class="concept-icon">📦</div>
+            <h3>Network</h3>
+            <p>Sends fully rendered page</p>
+          </div>
+          <div class="concept-arrow">→</div>
+          <div class="concept-card">
+            <div class="concept-icon">🌐</div>
+            <h3>Browser</h3>
+            <p>Displays content immediately</p>
+          </div>
+        </div>
+
+        <div class="analogy-section">
+          <h3>🍕 The Pizza Delivery Analogy</h3>
+          <div class="analogy-comparison">
+            <div class="analogy-item csr">
+              <h4>Client-Side Rendering (CSR)</h4>
+              <div class="analogy-steps">
+                <div class="step">📦 Receive ingredients box</div>
+                <div class="step">📋 Read recipe instructions</div>
+                <div class="step">👨‍🍳 Make dough from scratch</div>
+                <div class="step">🥫 Add sauce and toppings</div>
+                <div class="step">🔥 Bake in your oven</div>
+                <div class="step">🍕 Finally eat! (30 min later)</div>
+              </div>
+              <div class="analogy-time">⏱️ Total Time: ~30 minutes</div>
+            </div>
+            <div class="analogy-item ssr">
+              <h4>Server-Side Rendering (SSR)</h4>
+              <div class="analogy-steps">
+                <div class="step">🍕 Restaurant makes pizza</div>
+                <div class="step">📦 Delivers hot and ready</div>
+                <div class="step">😋 Eat immediately!</div>
+              </div>
+              <div class="analogy-time">⏱️ Total Time: ~5 minutes</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="benefits-section">
+          <h3>✨ Key Benefits of SSR</h3>
+          <div class="benefits-grid">
+            <div class="benefit-card">
+              <div class="benefit-icon">🔍</div>
+              <h4>Better SEO</h4>
+              <p>Search engines can read your content easily</p>
+              <div class="benefit-detail">
+                <strong>Impact:</strong> 40-60% more organic traffic
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">⚡</div>
+              <h4>Faster FCP</h4>
+              <p>First Contentful Paint happens instantly</p>
+              <div class="benefit-detail">
+                <strong>Speed:</strong> 0.5-1s vs 3-5s
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">📱</div>
+              <h4>Better on Mobile</h4>
+              <p>Works great on low-end devices</p>
+              <div class="benefit-detail">
+                <strong>Battery:</strong> 30% less consumption
+              </div>
+            </div>
+            <div class="benefit-card">
+              <div class="benefit-icon">🔗</div>
+              <h4>Social Sharing</h4>
+              <p>Perfect previews on Facebook, Twitter, etc.</p>
+              <div class="benefit-detail">
+                <strong>CTR:</strong> 2-3x higher
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Comparison Tab -->
+      <div id="comparison" class="tab-content">
+        <h2>⚔️ SSR vs CSR vs SSG</h2>
+
+        <div class="comparison-table-wrapper">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Feature</th>
+                <th class="ssr-col">SSR</th>
+                <th class="csr-col">CSR</th>
+                <th class="ssg-col">SSG</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>When Rendered</strong></td>
+                <td class="ssr-col">Each request</td>
+                <td class="csr-col">In browser</td>
+                <td class="ssg-col">Build time</td>
+              </tr>
+              <tr>
+                <td><strong>SEO Score</strong></td>
+                <td class="ssr-col">⭐⭐⭐⭐⭐</td>
+                <td class="csr-col">⭐⭐</td>
+                <td class="ssg-col">⭐⭐⭐⭐⭐</td>
+              </tr>
+              <tr>
+                <td><strong>Initial Load</strong></td>
+                <td class="ssr-col">Fast (0.5-1.5s)</td>
+                <td class="csr-col">Slow (2-5s)</td>
+                <td class="ssg-col">Fastest (0.1-0.5s)</td>
+              </tr>
+              <tr>
+                <td><strong>Dynamic Content</strong></td>
+                <td class="ssr-col">✅ Yes</td>
+                <td class="csr-col">✅ Yes</td>
+                <td class="ssg-col">❌ No</td>
+              </tr>
+              <tr>
+                <td><strong>Server Cost</strong></td>
+                <td class="ssr-col">High</td>
+                <td class="csr-col">Low</td>
+                <td class="ssg-col">Very Low</td>
+              </tr>
+              <tr>
+                <td><strong>TTI</strong></td>
+                <td class="ssr-col">1-3s</td>
+                <td class="csr-col">3-6s</td>
+                <td class="ssg-col">0.5-2s</td>
+              </tr>
+              <tr>
+                <td><strong>Best For</strong></td>
+                <td class="ssr-col">E-commerce, News</td>
+                <td class="csr-col">Apps, Dashboards</td>
+                <td class="ssg-col">Blogs, Docs</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div class="use-cases">
+          <h3>🎯 When to Use Each Approach</h3>
+          <div class="use-case-grid">
+            <div class="use-case ssr">
+              <h4>Use SSR For:</h4>
+              <ul>
+                <li>✅ E-commerce product pages</li>
+                <li>✅ News articles</li>
+                <li>✅ Social media feeds</li>
+                <li>✅ Real estate listings</li>
+                <li>✅ Job boards</li>
+              </ul>
+            </div>
+            <div class="use-case csr">
+              <h4>Use CSR For:</h4>
+              <ul>
+                <li>✅ Admin dashboards</li>
+                <li>✅ Chat applications</li>
+                <li>✅ Private tools</li>
+                <li>✅ Rich editors</li>
+                <li>✅ Games</li>
+              </ul>
+            </div>
+            <div class="use-case ssg">
+              <h4>Use SSG For:</h4>
+              <ul>
+                <li>✅ Blog posts</li>
+                <li>✅ Documentation</li>
+                <li>✅ Landing pages</li>
+                <li>✅ Portfolio sites</li>
+                <li>✅ Marketing sites</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Visualization Tab -->
+      <div id="visualization" class="tab-content">
+        <h2>🎬 Live Rendering Demo</h2>
+
+        <div class="demo-controls">
+          <button class="demo-btn csr-btn" onclick="simulateCSR()">
+            🌐 Simulate CSR
+          </button>
+          <button class="demo-btn ssr-btn" onclick="simulateSSR()">
+            ⚡ Simulate SSR
+          </button>
+          <button class="demo-btn ssg-btn" onclick="simulateSSG()">
+            🚀 Simulate SSG
+          </button>
+          <button class="demo-btn reset-btn" onclick="resetDemo()">
+            🔄 Reset
+          </button>
+        </div>
+
+        <div class="visualization-area">
+          <div class="render-flow">
+            <div class="flow-section server">
+              <h4>🖥️ Server</h4>
+              <div id="server-activity" class="activity-log"></div>
+            </div>
+            <div class="flow-section network">
+              <h4>🌐 Network</h4>
+              <div id="network-activity" class="activity-log"></div>
+            </div>
+            <div class="flow-section browser">
+              <h4>💻 Browser</h4>
+              <div id="browser-activity" class="activity-log"></div>
+            </div>
+          </div>
+
+          <div class="metrics-display">
+            <h4>📊 Performance Metrics</h4>
+            <div class="metrics-grid">
+              <div class="metric">
+                <div class="metric-label">TTFB</div>
+                <div id="ttfb-value" class="metric-value">-</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">FCP</div>
+                <div id="fcp-value" class="metric-value">-</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">TTI</div>
+                <div id="tti-value" class="metric-value">-</div>
+              </div>
+              <div class="metric">
+                <div class="metric-label">Total</div>
+                <div id="total-value" class="metric-value">-</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="browser-viewport">
+            <div class="viewport-header">
+              <div class="viewport-controls">
+                <span class="dot red"></span>
+                <span class="dot yellow"></span>
+                <span class="dot green"></span>
+              </div>
+              <div class="viewport-url">https://example.com</div>
+            </div>
+            <div id="viewport-content" class="viewport-body">
+              <div class="viewport-placeholder">
+                Click a simulation button to see the rendering process
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Implementation Tab -->
+      <div id="implementation" class="tab-content">
+        <h2>💻 SSR Implementation in Next.js</h2>
+
+        <!-- Next.js Implementation -->
+        <div class="framework-content active">
+          <h3>Next.js (React) Implementation</h3>
+
+          <div class="code-example">
+            <div class="code-header">
+              <span class="code-file">pages/products/[id].js</span>
+              <button class="copy-btn" onclick="copyCode(this)">📋 Copy</button>
+            </div>
+            <pre><code>// Server-Side Rendering in Next.js
+export async function getServerSideProps(context) {
+  const { id } = context.params
+  
+  // This code runs on the server for EACH request
+  try {
+    const res = await fetch(`https://api.example.com/products/${id}`)
+    const product = await res.json()
+    
+    return {
+      props: {
+        product,
+        timestamp: new Date().toISOString()
+      }
+    }
+  } catch (error) {
+    return {
+      notFound: true // Shows 404 page
+    }
+  }
+}
+
+export default function ProductPage({ product, timestamp }) {
+  return (
+    &lt;div&gt;
+      &lt;h1&gt;{product.name}&lt;/h1&gt;
+      &lt;p&gt;Price: ${product.price}&lt;/p&gt;
+      &lt;p&gt;Stock: {product.stock} units&lt;/p&gt;
+      &lt;small&gt;Rendered at: {timestamp}&lt;/small&gt;
+    &lt;/div&gt;
+  )
+}</code></pre>
+          </div>
+
+          <div class="implementation-notes">
+            <h4>Key Points:</h4>
+            <ul>
+              <li>✅ <code>getServerSideProps</code> runs on every request</li>
+              <li>✅ Perfect for dynamic data that changes frequently</li>
+              <li>✅ Always returns fresh data</li>
+              <li>✅ Can access request context (cookies, headers)</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="best-practices">
+          <h3>🎯 SSR Best Practices</h3>
+          <div class="practices-grid">
+            <div class="practice do">
+              <h4>✅ DO</h4>
+              <ul>
+                <li>Cache SSR responses when possible</li>
+                <li>Handle errors gracefully</li>
+                <li>Use TypeScript for type safety</li>
+                <li>Implement timeout for API calls</li>
+                <li>Monitor server performance</li>
+              </ul>
+            </div>
+            <div class="practice dont">
+              <h4>❌ DON'T</h4>
+              <ul>
+                <li>Access browser APIs in server code</li>
+                <li>Make unnecessary API calls</li>
+                <li>Ignore memory leaks</li>
+                <li>Skip error boundaries</li>
+                <li>Expose sensitive data</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <div class="footer-content">
+          <h3>🎓 Ready to Master SSR?</h3>
+          <p>
+            Server-Side Rendering is a crucial skill for modern web development!
+          </p>
+          <div class="footer-stats">
+            <div class="stat">
+              <div class="stat-value">67%</div>
+              <div class="stat-label">of companies use SSR</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">2-3x</div>
+              <div class="stat-label">better SEO results</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">40%</div>
+              <div class="stat-label">faster page loads</div>
+            </div>
+          </div>
+          <div class="footer-actions">
+            <a
+              href="https://nextjs.org/learn"
+              target="_blank"
+              class="btn-primary"
+              >Learn Next.js SSR</a
+            >
+            <a href="https://react.dev/" target="_blank" class="btn-secondary"
+              >Learn React</a
+            >
+          </div>
+          <div
+            class="creator-section"
+            style="
+              margin-top: 2rem;
+              padding-top: 2rem;
+              border-top: 2px solid rgba(255, 255, 255, 0.1);
+              text-align: center;
+            ">
+            <p style="font-size: 0.9rem; opacity: 0.9">
+              Created by
+              <a
+                href="https://github.com/aakku106"
+                target="_blank"
+                style="color: #4fc3f7; text-decoration: none; font-weight: 600"
+                >aakku106</a
+              >
+              - Making web development fun and accessible for everyone! 🚀
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
