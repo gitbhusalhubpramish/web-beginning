@@ -128,14 +128,21 @@ React has:
 - Thousands of ready-made components and libraries
 - Huge community support and tutorials
 
-### 5. **Job Market Demand** 💼
+### 5. **Global Job Market Demand** 💼
 
-React developers are in high demand:
+React developers are in high demand worldwide:
 
-- **High salary packages** (₹6-25 LPA in India)
-- **Remote work opportunities**
+**Salary Ranges:**
+- **Nepal**: NPR 8-35 LPA (many work remotely for global companies)
+- **India**: ₹6-25 LPA (huge local market + outsourcing)
+- **USA**: $60,000-$150,000+ annually
+- **Global Remote**: $30,000-$100,000+ annually
+
+**Career Benefits:**
+- **Remote work opportunities** - Work from Nepal for global companies
 - Used by **top companies worldwide**
 - **Future-proof skill** - React continues to evolve
+- **High demand** in both local and international markets
 
 ## React vs Other Approaches
 
@@ -204,8 +211,9 @@ return (
 
 ## Real-World Applications Built with React
 
-### **Popular Indian Apps:**
+### **Regional Apps (Nepal & India):**
 
+- **Pathao** - Ride-sharing and delivery (used in Nepal)
 - **Zomato** - Food delivery platform
 - **Flipkart** - E-commerce website
 - **Paytm** - Digital payments app
@@ -255,10 +263,10 @@ After understanding what React is, you'll learn:
 
 ### **For Career Growth:**
 
-- **Higher salaries** - React developers earn more
-- **Remote opportunities** - Work from anywhere
-- **Freelancing potential** - Build apps for clients
-- **Startup opportunities** - Create your own products
+- **Higher salaries globally** - React developers earn competitive wages worldwide
+- **Remote opportunities** - Work from Nepal for companies in US, Europe, Australia
+- **Freelancing potential** - Build apps for international clients
+- **Startup opportunities** - Create your own products for global market
 
 ### **For Developers:**
 

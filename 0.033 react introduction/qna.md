@@ -422,11 +422,14 @@ function TodoApp() {
 
 **Solution:**
 
-**Industry Demand:**
+**Global Industry Demand:**
 
-- React developers earn ₹6-25 LPA in India
-- Used by 40%+ of professional developers
-- Required skill for most frontend positions
+- **Nepal:** NPR 8-35 LPA (many work remotely for international companies)
+- **India:** ₹6-25 LPA (large local market + outsourcing)
+- **USA:** $60,000-$150,000+ annually
+- **Global Remote:** $30,000-$100,000+ annually
+- Used by 40%+ of professional developers worldwide
+- Required skill for most frontend positions globally
 
 **Learning Benefits:**
 
