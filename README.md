@@ -27,7 +27,7 @@ Web development is huge, but here we’ll focus on the **essentials** and the **
 
 - **Practice First** → You’ll code more than you read.  
 - **Tool-Oriented** → Learn how to use popular tools that professionals use.  
-- **Self-Education** → Along the way, you’ll get exercises and practice questions.  
+- **Self-Education** → Along the way, you’ll get exercises and practice questions in `qna.md`.  
   - Make mistakes ✅  
   - Fix them ✅  
   - Learn deeply ✅  
