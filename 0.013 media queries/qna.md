@@ -8,7 +8,6 @@ Here are some **real-world coding exercises** for CSS Media Queries to help begi
 
 **Question:** Create a header with a logo on the left and navigation links on the right. On screens smaller than 600px, make the navigation links stack vertically below the logo.
 
-
 ---
 
 ## 2. Responsive Card Layout

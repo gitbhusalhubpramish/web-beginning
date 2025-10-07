@@ -1,6 +1,6 @@
 # JavaScript - Introduction
 
-Have you ever wondered how websites can **do interactive things** like showing messages, responding when you click buttons, or logging information? 
+Have you ever wondered how websites can **do interactive things** like showing messages, responding when you click buttons, or logging information?
 
 That’s all done using **JavaScript (JS)**! It is a **programming language for the web** that makes websites **dynamic and interactive**.
 

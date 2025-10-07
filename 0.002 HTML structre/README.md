@@ -6,7 +6,6 @@ JavaScript is used to make the website **functional**. It is also known as the *
 
 <img src="./img/comparison+of+HTML+and+CSS+and+JS.png">
 
-
 As shown in the image:
 
 - HTML = **Skeleton** (man)
@@ -14,6 +13,7 @@ As shown in the image:
 - JavaScript = **Brain** (functionality)
 
 ---
+
 # Introduction to HTML
 
 HTML stands for **HyperText Markup Language**.
@@ -37,7 +37,7 @@ Here’s a basic HTML program that prints `Hello, World!` on the screen:
 
 <img src="img/Screenshot (222) - Copy.png">
 
-## Explanation:
+## Explanation
 
 - `<!DOCTYPE html`> → Declares the document type and version of HTML being used.
 
@@ -63,6 +63,7 @@ They are ignored by the **compiler/interpreter** and used by programmers to **de
 In HTML, we write comments using `<!-- ... -->`.
 
 Example:
+
 ```html
 <!DOCTYPE html>
 <html>
@@ -75,6 +76,5 @@ Example:
   </body>
 </html>
 ```
-
 
 👉 The line `<!-- This is a comment -->` will be ignored, and only `Hello, World!` will be shown.
