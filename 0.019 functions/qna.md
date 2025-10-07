@@ -33,6 +33,32 @@ function greet(name) {
 greet("Raj"); // "Raj" is an argument
 ```
 
+### 4. What are async/await functions?
+
+**Answer:** Async/await functions are used when you need to wait for something to complete (like loading data from the internet).
+
+- `async` keyword makes a function asynchronous (can wait for things)
+- `await` keyword pauses the function until a task completes
+
+**Real-life analogy:** It's like ordering food online - you place the order (start), do other things (continue), and get notified when it arrives (await result).
+
+**Example:**
+
+```javascript
+async function loadUserData() {
+  console.log("Loading...");
+  await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait 2 seconds
+  console.log("Data loaded!");
+}
+```
+
+**When to use:**
+
+- Fetching data from APIs
+- Reading files
+- Database operations
+- Any task that takes time
+
 ## Practical Exercises
 
 ### Exercise 1: Create Your First Function
@@ -361,6 +387,129 @@ console.log(isPrime(2)); // true
 console.log(isPrime(17)); // true
 console.log(isPrime(25)); // false
 console.log(isPrime(29)); // true
+```
+
+### Challenge 3: Async/Await - Fetch User Profile
+
+**Task:** Create an async function that simulates fetching a user profile with a 2-second delay.
+
+**Solution:**
+
+```javascript
+// Simulate fetching user data
+async function fetchUserProfile(userId) {
+  console.log("Fetching user profile...");
+
+  // Wait for 2 seconds (simulating API call)
+  await new Promise((resolve) => setTimeout(resolve, 2000));
+
+  // Return user data
+  return {
+    id: userId,
+    name: "Raj Kumar",
+    age: 25,
+    email: "raj@example.com",
+  };
+}
+
+// Using the async function
+async function displayProfile() {
+  const user = await fetchUserProfile(123);
+  console.log("User Name:", user.name);
+  console.log("User Email:", user.email);
+}
+
+displayProfile();
+// Output (after 2 seconds):
+// Fetching user profile...
+// User Name: Raj Kumar
+// User Email: raj@example.com
+```
+
+### Challenge 4: Async/Await - Multiple API Calls
+
+**Task:** Create functions that simulate fetching weather and news, then display both together.
+
+**Solution:**
+
+```javascript
+// Simulate fetching weather
+async function getWeather(city) {
+  await new Promise((resolve) => setTimeout(resolve, 1000));
+  return {
+    city: city,
+    temp: "25°C",
+    condition: "Sunny",
+  };
+}
+
+// Simulate fetching news
+async function getNews() {
+  await new Promise((resolve) => setTimeout(resolve, 1500));
+  return [
+    "Breaking: New JavaScript features released!",
+    "Tech: AI advances continue",
+    "Sports: Cricket match today",
+  ];
+}
+
+// Fetch both and display
+async function getDashboardData(city) {
+  console.log("Loading dashboard...");
+
+  // Wait for both to complete
+  const weather = await getWeather(city);
+  const news = await getNews();
+
+  console.log("Weather:", weather.temp, weather.condition);
+  console.log("Top News:", news[0]);
+  console.log("Dashboard loaded!");
+}
+
+getDashboardData("Mumbai");
+// Output (after ~2.5 seconds):
+// Loading dashboard...
+// Weather: 25°C Sunny
+// Top News: Breaking: New JavaScript features released!
+// Dashboard loaded!
+```
+
+### Challenge 5: Error Handling in Async Functions
+
+**Task:** Create an async function that handles errors properly using try-catch.
+
+**Solution:**
+
+```javascript
+async function fetchDataWithErrorHandling(url) {
+  try {
+    console.log("Fetching data from:", url);
+
+    // Simulate API call
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Simulate error for invalid URL
+    if (!url.startsWith("https://")) {
+      throw new Error("Invalid URL - must start with https://");
+    }
+
+    return { data: "Success! Data loaded." };
+  } catch (error) {
+    console.error("Error:", error.message);
+    return { error: error.message };
+  }
+}
+
+// Test with valid URL
+async function test() {
+  const result1 = await fetchDataWithErrorHandling("https://api.example.com");
+  console.log(result1); // { data: "Success! Data loaded." }
+
+  const result2 = await fetchDataWithErrorHandling("http://invalid.com");
+  console.log(result2); // { error: "Invalid URL - must start with https://" }
+}
+
+test();
 ```
 
 ## Quick Practice Tips

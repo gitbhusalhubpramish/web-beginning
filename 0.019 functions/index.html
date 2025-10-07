@@ -238,6 +238,44 @@ function demonstrateScope() {
 }</code></pre>
           </div>
         </section>
+
+        <!-- Async/Await Demo -->
+        <section class="demo-section">
+          <h2>9. Async/Await Functions (For Waiting Tasks)</h2>
+          <p>Functions that wait for tasks to complete (like loading data)</p>
+          <div class="demo-area">
+            <input
+              type="text"
+              id="cityName"
+              placeholder="Enter city name"
+              class="demo-input" />
+            <button onclick="fetchCityData()" class="demo-btn">
+              🌍 Fetch City Data
+            </button>
+            <button onclick="simulateOrder()" class="demo-btn">
+              🍕 Order Pizza (Async)
+            </button>
+            <div id="async-output" class="output"></div>
+          </div>
+          <div class="code-display">
+            <h3>Code:</h3>
+            <pre><code>// Async function that waits
+async function fetchCityData(city) {
+    // Simulate waiting for server response
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    return `Data loaded for ${city}!`;
+}
+
+// Async function with multiple steps
+async function simulateOrder() {
+    console.log("Order placed...");
+    await new Promise(resolve => setTimeout(resolve, 1000));
+    console.log("Pizza being prepared...");
+    await new Promise(resolve => setTimeout(resolve, 2000));
+    console.log("Pizza delivered! 🍕");
+}</code></pre>
+          </div>
+        </section>
       </main>
 
       <footer>

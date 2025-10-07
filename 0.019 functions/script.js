@@ -272,6 +272,93 @@ function demonstrateScope() {
   output.className = "output success animate-in";
 }
 
+// 9. Async/Await Functions Demonstration
+async function fetchCityData() {
+  const output = document.getElementById("async-output");
+  const cityInput = document.getElementById("cityName");
+  const city = cityInput.value.trim();
+
+  if (city === "") {
+    output.innerHTML = "❌ Please enter a city name!";
+    output.className = "output error animate-in";
+    return;
+  }
+
+  // Show loading state
+  output.innerHTML = "⏳ Loading data for " + city + "...";
+  output.className = "output animate-in";
+
+  try {
+    // Simulate fetching data with a delay (like calling an API)
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Simulate getting data
+    const cityData = {
+      city: city,
+      population: Math.floor(Math.random() * 10000000) + 100000,
+      country: "India",
+      temperature: Math.floor(Math.random() * 20) + 15 + "°C",
+    };
+
+    const message = `
+            <strong>✅ Data Loaded Successfully!</strong><br>
+            🏙️ City: ${cityData.city}<br>
+            👥 Population: ${cityData.population.toLocaleString()}<br>
+            🌍 Country: ${cityData.country}<br>
+            🌡️ Temperature: ${cityData.temperature}<br>
+            <br>
+            <em>This data was fetched asynchronously (waited 2 seconds)</em>
+        `;
+
+    output.innerHTML = message;
+    output.className = "output success animate-in highlight";
+  } catch (error) {
+    output.innerHTML = "❌ Error loading data: " + error.message;
+    output.className = "output error animate-in";
+  }
+}
+
+async function simulateOrder() {
+  const output = document.getElementById("async-output");
+
+  try {
+    // Step 1: Order placed
+    output.innerHTML = "🛒 Order placed... Please wait!";
+    output.className = "output animate-in";
+    await new Promise((resolve) => setTimeout(resolve, 1000));
+
+    // Step 2: Preparing
+    output.innerHTML = "👨‍🍳 Pizza is being prepared...<br>🔥 Baking in oven...";
+    output.className = "output warning animate-in";
+    await new Promise((resolve) => setTimeout(resolve, 2000));
+
+    // Step 3: Out for delivery
+    output.innerHTML =
+      "🏍️ Pizza is out for delivery...<br>📍 Driver is on the way...";
+    output.className = "output warning animate-in";
+    await new Promise((resolve) => setTimeout(resolve, 1500));
+
+    // Step 4: Delivered
+    const message = `
+            <strong>✅ Pizza Delivered Successfully! 🍕</strong><br>
+            <br>
+            📦 Order Timeline:<br>
+            1️⃣ Order Placed (1s)<br>
+            2️⃣ Prepared (2s)<br>
+            3️⃣ Delivered (1.5s)<br>
+            ⏱️ Total Time: 4.5 seconds<br>
+            <br>
+            <em>This demonstrates async/await with multiple waiting steps!</em>
+        `;
+
+    output.innerHTML = message;
+    output.className = "output success animate-in highlight";
+  } catch (error) {
+    output.innerHTML = "❌ Order failed: " + error.message;
+    output.className = "output error animate-in";
+  }
+}
+
 // Utility function to add animation class
 function addAnimation(element) {
   element.classList.remove("animate-in");

@@ -84,6 +84,79 @@ const multiply = (a, b) => {
 const multiply = (a, b) => a * b;
 ```
 
+### 5. Async/Await Functions (For Waiting Tasks)
+
+Sometimes functions need to wait for something (like getting data from the internet). Think of it like ordering food online - you don't wait standing at your door, you do other things and come back when it arrives!
+
+**Simple Explanation:**
+
+- `async` = "This function might take time"
+- `await` = "Wait for this to finish before moving forward"
+
+**Example 1: Simulating a Delay**
+
+```javascript
+// Function that waits for 2 seconds
+async function waitAndGreet() {
+  console.log("Starting...");
+  await new Promise((resolve) => setTimeout(resolve, 2000)); // Wait 2 seconds
+  console.log("Hello! I waited 2 seconds!");
+}
+
+waitAndGreet();
+```
+
+**Example 2: Fetching User Data (Like Loading a Profile)**
+
+```javascript
+async function getUserName() {
+  // Imagine this is getting data from a server
+  await new Promise((resolve) => setTimeout(resolve, 1000)); // Simulate delay
+  return "Raj Kumar";
+}
+
+async function displayUserProfile() {
+  console.log("Loading profile...");
+  const name = await getUserName(); // Wait for the name
+  console.log("Welcome, " + name + "!"); // Show after loading
+}
+
+displayUserProfile();
+// Output:
+// Loading profile...
+// (waits 1 second)
+// Welcome, Raj Kumar!
+```
+
+**Example 3: Real-World - Getting Joke from API**
+
+```javascript
+async function getRandomJoke() {
+  const response = await fetch("https://api.jokes.com/random");
+  const data = await response.json();
+  return data.joke;
+}
+
+// Using the function
+async function showJoke() {
+  const joke = await getRandomJoke();
+  console.log(joke);
+}
+```
+
+**Why Use Async/Await?**
+
+- Fetching data from websites/APIs
+- Reading files
+- Database operations
+- Any task that takes time
+
+**Key Points:**
+
+- Always use `await` inside an `async` function
+- `await` makes code wait for promises to complete
+- Makes code easier to read than callbacks
+
 ## Real-World Examples
 
 ### Example 1: Calculate GST
