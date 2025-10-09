@@ -404,16 +404,29 @@ function initializeExampleDemos() {
 
 // Educational console helpers
 function initializeConsoleHelpers() {
-  console.log("useState Learning Session Started!");
-  console.log(
-    "💡 Tip: Watch the console for useState updates as you interact with demos"
-  );
-  console.log("Key useState concepts to remember:");
-  console.log("   1. State is component memory");
-  console.log("   2. Always use setState function to update");
-  console.log("   3. State updates trigger re-renders");
-  console.log("   4. Use functional updates for complex state");
-  console.log("   5. Don't mutate state directly");
+  console.group("🎓 useState Learning Session Started!");
+  console.info("💡 Interactive demos will show you how useState works in practice");
+  console.info("📊 Watch for state changes, validations, and React patterns");
+  
+  console.groupCollapsed("📚 Key useState Concepts");
+  const concepts = [
+    { concept: "State Memory", description: "State is component memory that persists between renders" },
+    { concept: "Setter Function", description: "Always use setState function to update state" },
+    { concept: "Re-renders", description: "State updates trigger component re-renders" },
+    { concept: "Functional Updates", description: "Use prev => newValue for complex state logic" },
+    { concept: "Immutability", description: "Don't mutate state directly - create new objects/arrays" }
+  ];
+  console.table(concepts);
+  console.groupEnd();
+  
+  console.groupCollapsed("🎯 Demo Navigation");
+  console.info("🔹 Counter Demo: Learn basic state updates");
+  console.info("🔹 Pattern Demos: Numbers, Strings, Booleans, Arrays, Objects");
+  console.info("🔹 Real Examples: Like button, Todo list, Contact form");
+  console.info("🔹 Best Practices: Rules, tips, and common mistakes");
+  console.groupEnd();
+  
+  console.groupEnd();
 }
 
 // Animation helpers
@@ -456,8 +469,10 @@ function initializePageEffects() {
 
 // Initialize everything when DOM is loaded
 document.addEventListener("DOMContentLoaded", () => {
-  console.log("Initializing useState lesson...");
-
+  console.group("🚀 useState Lesson Initialization");
+  console.time("⏱️ Initialization Time");
+  
+  console.info("📋 Loading components...");
   initializeTabs();
   initializeCopyButtons();
   initializeCounterDemo();
@@ -467,13 +482,16 @@ document.addEventListener("DOMContentLoaded", () => {
   initializePageEffects();
 
   // Initialize global displays
+  console.info("🎨 Setting up interactive displays...");
   updateCounterDisplay();
   updateFruitDisplay();
   updateUserDisplay();
   updateTodoDisplay();
 
-  console.log("useState lesson initialized successfully!");
-  console.log("Try interacting with the demos to see useState in action!");
+  console.timeEnd("⏱️ Initialization Time");
+  console.info("✅ useState lesson initialized successfully!");
+  console.info("🎯 Try interacting with the demos to see useState in action!");
+  console.groupEnd();
 });
 
 // Error handling for missing elements
@@ -503,18 +521,34 @@ function logStateChange(component, state, action = "updated") {
 // Performance monitoring
 function monitorStateUpdates() {
   let updateCount = 0;
+  let updateHistory = [];
   const originalLog = console.log;
+  const originalGroup = console.group;
 
-  console.log = function (...args) {
-    if (args[0] && args[0].includes("useState:")) {
+  // Override console.group to track useState updates
+  console.group = function (message, ...args) {
+    if (message && (message.includes("State Update") || message.includes("Pattern Demo") || message.includes("Example"))) {
       updateCount++;
-      if (updateCount % 10 === 0) {
-        console.warn(
-          `Performance Note: ${updateCount} state updates so far. Remember to optimize when needed!`
-        );
+      updateHistory.push({
+        count: updateCount,
+        message: message,
+        timestamp: new Date().toLocaleTimeString()
+      });
+
+      if (updateCount % 15 === 0) {
+        console.groupCollapsed("📊 Performance Monitor");
+        console.warn(`🏃‍♂️ ${updateCount} state updates completed so far`);
+        console.info("💡 Remember: In React, frequent state updates can impact performance");
+        console.info("🔧 Consider using useCallback, useMemo, or state batching for optimization");
+        
+        console.groupCollapsed("📈 Recent Update History");
+        console.table(updateHistory.slice(-10));
+        console.groupEnd();
+        console.groupEnd();
       }
     }
-    originalLog.apply(console, args);
+    
+    return originalGroup.apply(console, [message, ...args]);
   };
 }
 
@@ -547,22 +581,59 @@ window.showTab = function (tabName) {
 
 // Counter demo functions
 let globalCount = 0;
+let countHistory = [];
+
 window.increaseCount = function () {
+  const previousCount = globalCount;
   globalCount++;
+  countHistory.push({ action: 'increment', from: previousCount, to: globalCount, timestamp: new Date().toLocaleTimeString() });
+  
   updateCounterDisplay();
-  console.log("useState: count increased to", globalCount);
+  
+  console.group("🔢 Counter State Update");
+  console.info(`Action: Increment | ${previousCount} → ${globalCount}`);
+  console.log("Current state:", globalCount);
+  console.log("State type:", typeof globalCount);
+  
+  if (countHistory.length > 1) {
+    console.groupCollapsed("📊 Counter History");
+    console.table(countHistory.slice(-5)); // Show last 5 actions
+    console.groupEnd();
+  }
+  console.groupEnd();
 };
 
 window.decreaseCount = function () {
+  const previousCount = globalCount;
   globalCount--;
+  countHistory.push({ action: 'decrement', from: previousCount, to: globalCount, timestamp: new Date().toLocaleTimeString() });
+  
   updateCounterDisplay();
-  console.log("useState: count decreased to", globalCount);
+  
+  console.group("🔢 Counter State Update");
+  console.info(`Action: Decrement | ${previousCount} → ${globalCount}`);
+  console.log("Current state:", globalCount);
+  console.log("State type:", typeof globalCount);
+  
+  if (countHistory.length > 1) {
+    console.groupCollapsed("📊 Counter History");
+    console.table(countHistory.slice(-5));
+    console.groupEnd();
+  }
+  console.groupEnd();
 };
 
 window.resetCount = function () {
+  const previousCount = globalCount;
   globalCount = 0;
+  countHistory.push({ action: 'reset', from: previousCount, to: globalCount, timestamp: new Date().toLocaleTimeString() });
+  
   updateCounterDisplay();
-  console.log("useState: count reset to", globalCount);
+  
+  console.group("🔄 Counter Reset");
+  console.warn(`State reset: ${previousCount} → ${globalCount}`);
+  console.log("All history cleared");
+  console.groupEnd();
 };
 
 function updateCounterDisplay() {
@@ -592,6 +663,7 @@ function updateCounterDisplay() {
 // Pattern demo functions
 let globalAge = 25;
 window.changeAge = function (delta) {
+  const previousAge = globalAge;
   globalAge += delta;
   if (globalAge < 0) globalAge = 0;
   if (globalAge > 120) globalAge = 120;
@@ -599,20 +671,32 @@ window.changeAge = function (delta) {
   const ageValue = document.getElementById("ageValue");
   if (ageValue) ageValue.textContent = globalAge;
 
-  console.log("useState: age changed to", globalAge);
+  console.group("👤 Age Pattern Demo");
+  console.info(`Age ${delta > 0 ? 'increased' : 'decreased'}: ${previousAge} → ${globalAge}`);
+  console.log("Age constraints: 0-120 years");
+  console.groupEnd();
 };
 
 window.updateName = function (value) {
   const nameDisplay = document.getElementById("nameDisplay");
+  const displayValue = value || "Anonymous";
+  
   if (nameDisplay) {
-    nameDisplay.textContent = value || "Anonymous";
+    nameDisplay.textContent = displayValue;
   }
-  console.log("useState: name updated to", value || "Anonymous");
+  
+  console.group("📝 String Pattern Demo");
+  console.info(`Name updated: "${displayValue}"`);
+  console.log("String length:", displayValue.length);
+  console.log("Input validation:", value ? "✅ Valid" : "⚠️ Empty (fallback applied)");
+  console.groupEnd();
 };
 
 let isSecretVisible = false;
 window.toggleVisibility = function () {
+  const previousState = isSecretVisible;
   isSecretVisible = !isSecretVisible;
+  
   const secretMessage = document.getElementById("secretMessage");
   const toggleBtn = document.getElementById("toggleBtn");
 
@@ -623,7 +707,11 @@ window.toggleVisibility = function () {
     toggleBtn.textContent = isSecretVisible ? "Hide" : "Show";
   }
 
-  console.log("useState: visibility toggled to", isSecretVisible);
+  console.group("👁️ Boolean Pattern Demo");
+  console.info(`Visibility toggled: ${previousState} → ${isSecretVisible}`);
+  console.log("Boolean state:", isSecretVisible);
+  console.log("UI effect:", isSecretVisible ? "Element shown" : "Element hidden");
+  console.groupEnd();
 };
 
 let globalFruits = ["🍎 Apple", "🍌 Banana"];
@@ -638,9 +726,16 @@ window.addFruit = function () {
   const randomFruit = fruits[Math.floor(Math.random() * fruits.length)];
 
   if (!globalFruits.includes(randomFruit)) {
+    const previousLength = globalFruits.length;
     globalFruits.push(randomFruit);
     updateFruitDisplay();
-    console.log("useState: fruit added", randomFruit);
+    
+    console.group("🍎 Array Pattern Demo - Add Fruit");
+    console.info(`Fruit added: ${randomFruit}`);
+    console.log("Array length:", `${previousLength} → ${globalFruits.length}`);
+    console.log("Updated array:", globalFruits);
+    console.log("React pattern: [...fruits, newFruit]");
+    console.groupEnd();
   } else {
     window.addFruit(); // Try again with different fruit
   }
@@ -648,9 +743,18 @@ window.addFruit = function () {
 
 window.removeFruit = function () {
   if (globalFruits.length > 0) {
+    const previousLength = globalFruits.length;
     const removed = globalFruits.pop();
     updateFruitDisplay();
-    console.log("useState: fruit removed", removed);
+    
+    console.group("🗑️ Array Pattern Demo - Remove Fruit");
+    console.warn(`Fruit removed: ${removed}`);
+    console.log("Array length:", `${previousLength} → ${globalFruits.length}`);
+    console.log("Updated array:", globalFruits);
+    console.log("React pattern: fruits.filter() or fruits.slice()");
+    console.groupEnd();
+  } else {
+    console.warn("🚫 Cannot remove fruit: Array is empty");
   }
 };
 
@@ -677,15 +781,27 @@ window.updateUserName = function () {
     "Emma",
     "Aakku",
   ];
+  const previousName = globalUser.name;
   globalUser.name = names[Math.floor(Math.random() * names.length)];
   updateUserDisplay();
-  console.log("useState: user name updated to", globalUser.name);
+  
+  console.group("👤 Object Pattern Demo - Update Name");
+  console.info(`Name changed: "${previousName}" → "${globalUser.name}"`);
+  console.log("Updated user object:", globalUser);
+  console.log("React pattern: setUser({...user, name: newName})");
+  console.groupEnd();
 };
 
 window.updateUserAge = function () {
+  const previousAge = globalUser.age;
   globalUser.age += 1;
   updateUserDisplay();
-  console.log("useState: user age updated to", globalUser.age);
+  
+  console.group("🎂 Object Pattern Demo - Birthday");
+  console.info(`Age updated: ${previousAge} → ${globalUser.age}`);
+  console.log("Updated user object:", globalUser);
+  console.log("React pattern: setUser({...user, age: user.age + 1})");
+  console.groupEnd();
 };
 
 function updateUserDisplay() {
@@ -700,6 +816,7 @@ function updateUserDisplay() {
 let isLiked = false;
 let likeCount = 0;
 window.toggleLike = function () {
+  const previousState = { isLiked, likeCount };
   isLiked = !isLiked;
   likeCount += isLiked ? 1 : -1;
 
@@ -719,7 +836,14 @@ window.toggleLike = function () {
       : `Click to like this post! Total: ${likeCount} likes`;
   }
 
-  console.log("❤️ useState: like toggled", { isLiked, likeCount });
+  console.group("❤️ Like Button Example");
+  console.info(`Action: ${isLiked ? 'Liked' : 'Unliked'} the post`);
+  console.table([
+    { State: "isLiked", Previous: previousState.isLiked, Current: isLiked },
+    { State: "likeCount", Previous: previousState.likeCount, Current: likeCount }
+  ]);
+  console.log("UI Update: Icon and status text changed");
+  console.groupEnd();
 };
 
 // Todo functions
@@ -731,15 +855,26 @@ window.addTodo = function () {
   const text = todoInput ? todoInput.value.trim() : "";
 
   if (text) {
-    globalTodos.push({
+    const newTodo = {
       id: todoIdCounter++,
       text: text,
       completed: false,
-    });
-
+    };
+    
+    globalTodos.push(newTodo);
     if (todoInput) todoInput.value = "";
     updateTodoDisplay();
-    console.log("➕ useState: todo added", text);
+    
+    console.group("➕ Todo List - Add Item");
+    console.info(`Todo added: "${text}"`);
+    console.log("New todo object:", newTodo);
+    console.log("Total todos:", globalTodos.length);
+    console.groupCollapsed("📋 All Todos");
+    console.table(globalTodos);
+    console.groupEnd();
+    console.groupEnd();
+  } else {
+    console.warn("⚠️ Cannot add empty todo");
   }
 };
 
@@ -750,17 +885,36 @@ window.handleTodoKeyPress = function (event) {
 };
 
 window.toggleTodo = function (id) {
+  const todoIndex = globalTodos.findIndex(todo => todo.id === id);
+  const previousCompleted = globalTodos[todoIndex].completed;
+  
   globalTodos = globalTodos.map((todo) =>
     todo.id === id ? { ...todo, completed: !todo.completed } : todo
   );
+  
   updateTodoDisplay();
-  console.log("useState: todo toggled", id);
+  
+  const updatedTodo = globalTodos.find(todo => todo.id === id);
+  
+  console.group("✅ Todo List - Toggle Complete");
+  console.info(`Todo "${updatedTodo.text}" marked as ${updatedTodo.completed ? 'completed' : 'pending'}`);
+  console.log("State change:", `${previousCompleted} → ${updatedTodo.completed}`);
+  console.log("Updated todo:", updatedTodo);
+  console.groupEnd();
 };
 
 window.deleteTodo = function (id) {
+  const todoToDelete = globalTodos.find(todo => todo.id === id);
+  const previousLength = globalTodos.length;
+  
   globalTodos = globalTodos.filter((todo) => todo.id !== id);
   updateTodoDisplay();
-  console.log("useState: todo deleted", id);
+  
+  console.group("🗑️ Todo List - Delete Item");
+  console.warn(`Todo deleted: "${todoToDelete.text}"`);
+  console.log("Todos count:", `${previousLength} → ${globalTodos.length}`);
+  console.log("React pattern: todos.filter(todo => todo.id !== id)");
+  console.groupEnd();
 };
 
 function updateTodoDisplay() {
@@ -802,6 +956,7 @@ window.handleFormSubmit = function (event) {
   const formMessage = document.getElementById("formMessage");
 
   // Update form data
+  const previousFormData = { ...globalFormData };
   globalFormData = {
     name: formName ? formName.value : "",
     email: formEmail ? formEmail.value : "",
@@ -840,6 +995,12 @@ window.handleFormSubmit = function (event) {
       formSuccess.textContent = "✅ Message sent successfully!";
     }
 
+    console.group("✅ Contact Form - Submission Success");
+    console.info("Form validated and submitted successfully!");
+    console.log("Form data:", globalFormData);
+    console.log("Validation: All fields passed");
+    console.groupEnd();
+
     // Reset form
     if (formName) formName.value = "";
     if (formEmail) formEmail.value = "";
@@ -850,10 +1011,12 @@ window.handleFormSubmit = function (event) {
     setTimeout(() => {
       if (formSuccess) formSuccess.style.display = "none";
     }, 3000);
-
-    console.log("useState: form submitted successfully");
   } else {
-    console.log("useState: form validation failed", globalFormErrors);
+    console.group("❌ Contact Form - Validation Failed");
+    console.warn("Form submission failed due to validation errors");
+    console.table(Object.entries(globalFormErrors).map(([field, error]) => ({ Field: field, Error: error })));
+    console.log("Form data:", globalFormData);
+    console.groupEnd();
   }
 };
 
@@ -878,6 +1041,14 @@ window.copyCode = function (button) {
       button.textContent = "✅ Copied!";
       button.style.background = "rgba(34, 197, 94, 0.9)";
 
+      console.group("📋 Code Copy");
+      console.info("Code successfully copied to clipboard");
+      console.log("Code length:", codeBlock.length + " characters");
+      console.groupCollapsed("📝 Copied Code");
+      console.log(codeBlock);
+      console.groupEnd();
+      console.groupEnd();
+
       setTimeout(() => {
         button.textContent = originalText;
         button.style.background = "rgba(14, 165, 233, 0.9)";
@@ -885,6 +1056,7 @@ window.copyCode = function (button) {
     })
     .catch(() => {
       button.textContent = "❌ Failed";
+      console.error("❌ Failed to copy code to clipboard");
       setTimeout(() => {
         button.textContent = "📋 Copy";
       }, 2000);
