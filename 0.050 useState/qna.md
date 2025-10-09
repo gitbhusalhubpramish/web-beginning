@@ -157,7 +157,7 @@ const [state, dispatch] = useReducer(reducer, {
 
 ---
 
-## 🚀 **Advanced Level Questions**
+## **Advanced Level Questions**
 
 ### **Q13: What is lazy initial state and when should you use it?**
 
@@ -244,7 +244,7 @@ function Parent() {
 
 ---
 
-## 🛠️ **Practical Scenario Questions**
+## **Practical Scenario Questions**
 
 ### **Q19: How would you implement a toggle button with useState?**
 
@@ -507,4 +507,4 @@ function UndoRedoCounter() {
 
 ---
 
-_Created by aakku106 - Happy Learning! 🚀_
+_Created by [aakku106](https://github.com/aakku106) - Happy Learning! 🚀_
