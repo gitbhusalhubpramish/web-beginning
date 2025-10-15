@@ -10,19 +10,23 @@ Normally, you’d pass the Wi-Fi password through **each level of staff** — ma
 This is called **prop drilling** in React — passing props through many components that don’t even use them.
 
 ```jsx
+// app.jsx
 function App() {
   const wifiPassword = "ReactRocks123";
   return <Receptionist wifiPassword={wifiPassword} />;
 }
 
+// receptionist.jsx
 function Receptionist({ wifiPassword }) {
   return <Room wifiPassword={wifiPassword} />;
 }
 
+// room.jsx
 function Room({ wifiPassword }) {
   return <Guest wifiPassword={wifiPassword} />;
 }
 
+// guest.jsx
 function Guest({ wifiPassword }) {
   return <p>Wi-Fi Password: {wifiPassword}</p>;
 }
@@ -45,6 +49,7 @@ Instead of passing data through every component, you place it in a **Context**, 
 ### Step 1: Create the Context
 
 ```jsx
+// ./HotelContext.js
 import React, { createContext } from "react";
 
 const HotelContext = createContext();
@@ -84,6 +89,7 @@ Now every component inside `HotelContext.Provider` can access the shared data.
 Instead of receiving props, components can directly **consume** the value:
 
 ```jsx
+// guest.jsx
 import React, { useContext } from "react";
 import HotelContext from "./HotelContext";
 
