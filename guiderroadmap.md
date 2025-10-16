@@ -63,14 +63,14 @@ This course is a collaborative effort created by multiple contributors. Each col
 33. **React Introduction** – What React is, why it’s popular.  
 41. **useState** – State management basics.  
 42. **useEffect** – Side effects.  
-43. **useContext** – Context API for global state.  
-44. **useRef** – Referencing elements.  
-45. **useMemo & memo** – Performance optimizations.  
 46. **Event Handling in React** – Handling user interactions.  
-47. **Tailwind CSS** – Utility-first CSS framework.  
 48. **Mapping in React** – Rendering lists with `.map()`.  
-49. **Page Routing** – Using React Router.  
 50. **Modular Programming in React** – Component-based architecture.  
+49. **Page Routing** – Using React Router.  
+45. **useMemo & memo** – Performance optimizations.  
+44. **useRef** – Referencing elements.  
+43. **useContext** – Context API for global state.  
+47. **Tailwind CSS** – Utility-first CSS framework.  
 51. **Connecting React to Express.js** – Frontend-backend integration.  
 52. **Next.js Introduction** – React framework overview.  
 53. **Server-Side Rendering (SSR)** – Basics of SSR.  
